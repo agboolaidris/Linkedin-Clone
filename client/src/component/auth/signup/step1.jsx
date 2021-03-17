@@ -1,8 +1,19 @@
 import React from "react";
 
 function Step1({ setstate, handleChange, nextstep, state }) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   const handleClick = () => {
-    console.log(state);
+    if (
+      !state.email ||
+      !state.username ||
+      !re.test(String(state.email).toLowerCase()) ||
+      state.username.length < 6
+    ) {
+      alert("the field is required");
+    } else {
+      nextstep();
+    }
   };
   return (
     <>
@@ -18,23 +29,20 @@ function Step1({ setstate, handleChange, nextstep, state }) {
         />
       </div>
       <div className="input">
-        <label htmlFor="">password</label>
+        <label htmlFor="">username</label>
         <input
-          type="password"
+          type="text"
           required
-          placeholder="password most be greater than six characters"
+          placeholder="username most be unique"
           onChange={handleChange}
-          value={state.password}
-          id="password"
+          value={state.username}
+          id="username"
         />
       </div>
 
-      <p>
-        By clicking Agree & Join, you agree to the LinkedIn User Agreement,
-        Privacy Policy, and Cookie Policy.
-      </p>
-
-      <button onClick={handleClick}>Agree and Join</button>
+      <button onClick={handleClick} type="button" className="submit-btn">
+        Join Professionals
+      </button>
     </>
   );
 }

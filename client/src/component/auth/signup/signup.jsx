@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Step1 from "./step1";
+import Step2 from "./step2";
 function Signup() {
   const [state, setstate] = useState({
     step: 1,
@@ -26,7 +27,7 @@ function Signup() {
   return (
     <div className="signup container">
       <h1>Make the most of your professional life</h1>
-      <div className="form">
+      <form className="form">
         {state.step === 1 ? (
           <Step1
             nextstep={nextstep}
@@ -35,9 +36,14 @@ function Signup() {
             state={state}
           />
         ) : (
-          <h1>hello</h1>
+          <Step2
+            nextstep={nextstep}
+            handleChange={handleChange}
+            setstate={setstate}
+            state={state}
+          />
         )}
-      </div>
+      </form>
       <div className="signin-link">
         Already have an account? <Link to="/signin">Sign In</Link>
       </div>
