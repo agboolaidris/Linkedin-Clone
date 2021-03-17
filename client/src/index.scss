@@ -1,5 +1,5 @@
+//google font link
 @import url("https://fonts.googleapis.com/css2?family=Redressed&family=Roboto:wght@300&display=swap");
-* {
-  font-family: "Redressed", cursive;
-  font-family: "Roboto", sans-serif;
-}
+
+@import "./style/config.scss";
+@import "./component/layout/nav/nav.scss";

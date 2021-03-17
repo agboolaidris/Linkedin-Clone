@@ -3,3 +3,26 @@ $blue-blue: #112d4e;
 $blue-white: #dbe2ef;
 $white: #f9f7f7;
 $orange: #b83b5e;
+$regular: "Roboto", sans-serif;
+
+$italic: "Redressed", cursive;
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background: $white;
+}
+
+*,
+*::after,
+*::before {
+  font-family: $regular;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding: 1em 5%;
+}
