@@ -1,29 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Step1 from "./step1";
 function Signup() {
+  const [state, setstate] = useState({
+    step: 1,
+    username: "",
+    email: "",
+    password: "",
+    password2: "",
+  });
+  const nextstep = () => {
+    setstate({
+      ...state,
+      step: state.step + 1,
+    });
+  };
+
+  const handleChange = (e) => {
+    setstate({
+      ...state,
+      [e.target.id]: e.target.value,
+    });
+  };
   return (
     <div className="signup container">
       <h1>Make the most of your professional life</h1>
-      <form action="">
-        <div className="input">
-          <label htmlFor="">Email</label>
-          <input type="email" required placeholder="email most be valid" />
-        </div>
-        <div className="input">
-          <label htmlFor="">password</label>
-          <input
-            type="password"
-            required
-            placeholder="password most be greater than six characters"
+      <form>
+        {state.step === 1 ? (
+          <Step1
+            nextstep={nextstep}
+            handleChange={handleChange}
+            setstate={setstate}
+            state={state}
           />
-        </div>
-
-        <p>
-          By clicking Agree & Join, you agree to the LinkedIn User Agreement,
-          Privacy Policy, and Cookie Policy.
-        </p>
-
-        <button>Agree and Join</button>
+        ) : (
+          <h1>hello</h1>
+        )}
       </form>
       <div className="signin-link">
         Already have an account? <Link to="/signin">Sign In</Link>
