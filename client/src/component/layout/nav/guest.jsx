@@ -4,10 +4,13 @@ function Guest({ setharmburger }) {
   return (
     <>
       <li className="signup" onClick={() => setharmburger(false)}>
+        <Link to="/">Home</Link>
+      </li>
+      <li className="signup" onClick={() => setharmburger(false)}>
         <Link to="/">Join now</Link>
       </li>
       <li className="signin">
-        <Link to="/" onClick={() => setharmburger(false)}>
+        <Link to="/signin" onClick={() => setharmburger(false)}>
           Sign in
         </Link>
       </li>
