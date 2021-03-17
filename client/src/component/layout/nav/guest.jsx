@@ -7,7 +7,7 @@ function Guest({ setharmburger }) {
         <Link to="/">Home</Link>
       </li>
       <li className="btn-guest" onClick={() => setharmburger(false)}>
-        <Link to="/">Join now</Link>
+        <Link to="/signup">Join now</Link>
       </li>
       <li className="btn-signin">
         <Link to="/signin" onClick={() => setharmburger(false)}>
