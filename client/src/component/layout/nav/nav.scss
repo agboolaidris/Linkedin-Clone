@@ -16,6 +16,7 @@
   .ul {
     display: flex;
     list-style: none;
+
     li {
       margin-left: 2em;
       width: 100px;
@@ -29,25 +30,25 @@
       }
     }
 
-    .signup {
+    .btn-guest {
       opacity: 0.7;
       a {
         color: $blue-blue;
       }
     }
-    .signup:hover {
+    .btn-guest:hover {
       background-color: $blue-white;
       border-radius: 10px;
       opacity: 1;
     }
-    .signin {
+    .btn-signin {
       border: 1px solid $blue;
       border-radius: 50px;
       a {
         color: $blue;
       }
     }
-    .signin:hover {
+    .btn-signin:hover {
       background-color: $blue-white;
     }
   }
