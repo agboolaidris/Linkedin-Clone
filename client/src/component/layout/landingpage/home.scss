@@ -1,0 +1,56 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90vh;
+  overflow: hidden;
+  .content {
+    width: 50%;
+    h1 {
+      font-size: 50px;
+      font-family: $italic;
+      font-weight: 100px;
+      color: $blue;
+    }
+    div {
+      font-size: 20px;
+      border: 1px solid $blue-white;
+      width: 70%;
+      max-width: 100%;
+      padding: 1em 0.8em;
+      margin-top: 0.3em;
+      border-radius: 10px;
+      a {
+        text-decoration: none;
+        color: $blue-blue;
+      }
+    }
+  }
+  .svg {
+    width: 50%;
+    img {
+      width: 140%;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .home {
+    flex-direction: column;
+    height: max-content;
+    .content {
+      width: 100%;
+      h1 {
+        font-size: 30px;
+        margin: 0.6em 0;
+      }
+      div {
+        width: 100%;
+      }
+    }
+
+    .svg {
+      margin-top: 1em;
+      width: 100%;
+    }
+  }
+}

@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./component/layout/nav/nav";
 import { BrowserRouter, Switch } from "react-router-dom";
+import Public from "./Router/public/public";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <h1>App React</h1>
+        <Public />
       </BrowserRouter>
     </div>
   );

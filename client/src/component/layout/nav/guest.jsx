@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function Guest() {
+function Guest({ setharmburger }) {
   return (
-    <ul className="guest ul">
-      <li className="signup">
+    <>
+      <li className="signup" onClick={() => setharmburger(false)}>
         <Link to="/">Join now</Link>
       </li>
       <li className="signin">
-        <Link to="/">Sign in</Link>
+        <Link to="/" onClick={() => setharmburger(false)}>
+          Sign in
+        </Link>
       </li>
-    </ul>
+    </>
   );
 }
 

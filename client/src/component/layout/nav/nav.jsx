@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Guest from "./guest";
+import Client from "./client";
 function Navbar() {
   const [harmburger, setharmburger] = useState(false);
 
@@ -27,7 +28,13 @@ function Navbar() {
           <span>Linked</span>
           <FontAwesomeIcon icon={faLinkedin} />
         </div>
-        <>{harmburger ? <h1>hii</h1> : <Guest />}</>
+        <ul className={harmburger ? "ul ul-mobile " : " ul"}>
+          {!harmburger ? (
+            <Guest setharmburger={setharmburger} />
+          ) : (
+            <Guest setharmburger={setharmburger} />
+          )}
+        </ul>
       </nav>
     </header>
   );
