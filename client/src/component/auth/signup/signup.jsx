@@ -9,6 +9,7 @@ function Signup() {
     password: "",
     password2: "",
   });
+
   const nextstep = () => {
     setstate({
       ...state,
@@ -25,7 +26,7 @@ function Signup() {
   return (
     <div className="signup container">
       <h1>Make the most of your professional life</h1>
-      <form>
+      <div className="form">
         {state.step === 1 ? (
           <Step1
             nextstep={nextstep}
@@ -36,7 +37,7 @@ function Signup() {
         ) : (
           <h1>hello</h1>
         )}
-      </form>
+      </div>
       <div className="signin-link">
         Already have an account? <Link to="/signin">Sign In</Link>
       </div>

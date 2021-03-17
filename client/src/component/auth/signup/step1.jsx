@@ -1,11 +1,21 @@
 import React from "react";
 
-function Step1() {
+function Step1({ setstate, handleChange, nextstep, state }) {
+  const handleClick = () => {
+    console.log(state);
+  };
   return (
     <>
       <div className="input">
         <label htmlFor="">Email</label>
-        <input type="email" required placeholder="email most be valid" />
+        <input
+          type="email"
+          required
+          placeholder="email most be valid"
+          onChange={handleChange}
+          value={state.email}
+          id="email"
+        />
       </div>
       <div className="input">
         <label htmlFor="">password</label>
@@ -13,6 +23,9 @@ function Step1() {
           type="password"
           required
           placeholder="password most be greater than six characters"
+          onChange={handleChange}
+          value={state.password}
+          id="password"
         />
       </div>
 
@@ -21,7 +34,7 @@ function Step1() {
         Privacy Policy, and Cookie Policy.
       </p>
 
-      <button>Agree and Join</button>
+      <button onClick={handleClick}>Agree and Join</button>
     </>
   );
 }

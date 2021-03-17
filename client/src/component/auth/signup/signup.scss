@@ -9,7 +9,7 @@
     font-family: $italic;
     color: $blue;
   }
-  form {
+  .form {
     box-shadow: 4px 2px 20px $blue-blue;
     padding: 1.5em;
     min-width: 300px;
@@ -87,7 +87,7 @@
 }
 @media only screen and (max-width: 700px) {
   .signup {
-    form {
+    .form {
       min-width: 300px;
       max-width: 100%;
     }
