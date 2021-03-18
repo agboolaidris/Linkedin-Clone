@@ -24,10 +24,21 @@ function Signup() {
       [e.target.id]: e.target.value,
     });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (state.password.length < 6) {
+      alert("password most be greater than 6 characters");
+    } else if (state.password !== state.password2) {
+      alert("password does not match");
+    } else {
+      console.log(state);
+    }
+  };
   return (
     <div className="signup container">
       <h1>Make the most of your professional life</h1>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         {state.step === 1 ? (
           <Step1
             nextstep={nextstep}

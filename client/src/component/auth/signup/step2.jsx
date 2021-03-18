@@ -1,12 +1,14 @@
 import React from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 function Step2({ setstate, handleChange, nextstep, state }) {
-  const handleClick = () => {
+  const prevstep = () => {
     setstate({ ...state, step: state.step - 1 });
   };
   return (
     <>
-      <button onClick={handleClick} className="back-btn">
+      <button onClick={prevstep} className="back-btn">
+        <FontAwesomeIcon icon={faArrowLeft} />
         Back
       </button>
       <div className="input">
