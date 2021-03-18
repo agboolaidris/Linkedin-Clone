@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../../../redux/action/auth";
 function Signin() {
   const [state, setstate] = useState({
     email: "",

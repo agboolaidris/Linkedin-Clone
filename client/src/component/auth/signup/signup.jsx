@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Step1 from "./step1";
 import Step2 from "./step2";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../../../redux/action/auth";
 function Signup() {
   const [state, setstate] = useState({
     step: 1,
@@ -11,6 +14,8 @@ function Signup() {
     password2: "",
   });
 
+  const dispatch = useDispatch();
+  const history = useHistory();
   const nextstep = () => {
     setstate({
       ...state,
@@ -32,7 +37,7 @@ function Signup() {
     } else if (state.password !== state.password2) {
       alert("password does not match");
     } else {
-      console.log(state);
+      dispatch(register(state, history));
     }
   };
   return (
