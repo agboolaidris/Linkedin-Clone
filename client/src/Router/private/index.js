@@ -1,6 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-function Index() {
+import { useSelector } from "react-redux";
+
+function Index({ component: Component, ...rest }) {
+  const isAuthenticated = useSelector((state) => state.Auth.isAuthenticated);
   return (
     <Route
       {...rest}

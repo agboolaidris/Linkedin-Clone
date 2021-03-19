@@ -1,6 +1,17 @@
 import * as api from "../api/auth";
 import * as type from "./type";
 
+export const checkLogin = () => {
+  return async (dispatch) => {
+    try {
+      const data = await api.persistance();
+      dispatch({ type: type.LOGIN_SUCCESS, payload: data.data });
+    } catch (error) {
+      dispatch({ type: type.LOGIN_ERROR, payload: error.response.data });
+    }
+  };
+};
+
 export const register = (state, history) => {
   return async (dispatch) => {
     try {
@@ -17,7 +28,7 @@ export const login = (state, history) => {
   return async (dispatch) => {
     try {
       const data = await api.login(state);
-      dispatch({ type: type.LOGIN_SUCCESS, payload: data });
+      dispatch({ type: type.LOGIN_SUCCESS, payload: data.data });
       history.push("/dashboard");
     } catch (error) {
       dispatch({ type: type.LOGIN_ERROR, payload: error.response.data });

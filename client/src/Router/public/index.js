@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Index({ component: Component, ...rest }) {
-  const isAuthenticated = false; // useSelector((state) => state.Auth.isAuthenticated);
+  const isAuthenticated = useSelector((state) => state.Auth.isAuthenticated);
   return (
     <Route
       {...rest}
@@ -11,7 +11,7 @@ function Index({ component: Component, ...rest }) {
         if (!isAuthenticated) {
           return <Component {...props} {...rest} />;
         } else {
-          return <Redirect to={{ pathname: "/login" }} />;
+          return <Redirect to="/dashboard" />;
         }
       }}
     />

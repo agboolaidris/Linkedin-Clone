@@ -1,8 +1,13 @@
 import React from "react";
+import Dashboard from "../../component/dashboard";
 import Route from "./index";
 
-function private() {
-  return <Route />;
+function Private() {
+  return (
+    <>
+      <Route component={Dashboard} path="/dashboard" />
+    </>
+  );
 }
 
-export default private;
+export default Private;
