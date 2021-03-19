@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login, register } from "../../../redux/action/auth";
+import { login } from "../../../redux/action/auth";
+import Loading from "../../../utilis/loading";
+
 function Signin() {
   const [state, setstate] = useState({
     email: "",
@@ -58,6 +60,7 @@ function Signin() {
       <div className="register-link">
         New to LinkediIn? <Link to="/signup">Join now</Link>
       </div>
+      <Loading />
     </div>
   );
 }

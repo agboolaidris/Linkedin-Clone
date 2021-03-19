@@ -6,3 +6,5 @@ export const LOGIN_ERROR = "LOGIN-ERROR";
 
 export const LOGOUT_SUCCESS = "LOGOUT-SUCCESS";
 export const LOGOUT_ERROR = "LOGOUT-ERROR";
+
+export const ISLOADING = "ISLOADING";

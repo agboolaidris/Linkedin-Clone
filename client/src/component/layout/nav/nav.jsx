@@ -4,9 +4,10 @@ import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Guest from "./guest";
 import Client from "./client";
+import { useSelector } from "react-redux";
 function Navbar() {
   const [harmburger, setharmburger] = useState(false);
-
+  const isAuthenticated = useSelector((state) => state.Auth.isAuthenticated);
   const handleHarmbuger = () => {
     if (harmburger) {
       setharmburger(false);
@@ -29,10 +30,10 @@ function Navbar() {
           <FontAwesomeIcon icon={faLinkedin} />
         </div>
         <ul className={harmburger ? "ul ul-mobile " : " ul"}>
-          {!harmburger ? (
+          {!isAuthenticated ? (
             <Guest setharmburger={setharmburger} />
           ) : (
-            <Guest setharmburger={setharmburger} />
+            <Client setharmburger={setharmburger} />
           )}
         </ul>
       </nav>

@@ -8,6 +8,13 @@ const initialState = {
 
 const Reducer = (state = initialState, action) => {
   switch (action.type) {
+    case type.ISLOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+      break;
+
     case type.REGISTER_SUCCESS:
       toast.success("Congratulation you are now a member!!! Kindly Login");
       return state;
