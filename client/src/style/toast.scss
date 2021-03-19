@@ -1,0 +1,17 @@
+.Toastify__toast-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  top: 2em;
+}
+.Toastify__toast {
+  position: absolute;
+}
+
+.Toastify__toast--warning {
+  background: $blue-blue !important;
+  color: $orange;
+}
+.Toastify__toast--success {
+  background: $blue-blue !important;
+}
