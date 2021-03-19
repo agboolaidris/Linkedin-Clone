@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import Step1 from "./step1";
 import Step2 from "./step2";
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { register } from "../../../redux/action/auth";
+import { toast } from "react-toastify";
 function Signup() {
   const [state, setstate] = useState({
     step: 1,
@@ -16,6 +17,7 @@ function Signup() {
 
   const dispatch = useDispatch();
   const history = useHistory();
+
   const nextstep = () => {
     setstate({
       ...state,
@@ -33,9 +35,9 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (state.password.length < 6) {
-      alert("password most be greater than 6 characters");
+      toast.warning("password most be greater than 6 characters");
     } else if (state.password !== state.password2) {
-      alert("password does not match");
+      toast.warning("password does not match");
     } else {
       dispatch(register(state, history));
     }

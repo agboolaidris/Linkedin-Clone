@@ -6,7 +6,7 @@ export const register = (state, history) => {
   return async (dispatch) => {
     try {
       const data = await api.register(state);
-      history.push("/signup");
+      history.push("/signin");
     } catch (error) {
       dispatch({ type: type.REGISTER_ERROR, payload: error.response.data });
       console.log(error.response);
