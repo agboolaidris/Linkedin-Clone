@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <ToastContainer />
+        <ToastContainer position="top-center" />
         <Public />
       </BrowserRouter>
     </div>
