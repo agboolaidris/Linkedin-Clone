@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../../redux/action/auth";
+import { useDispatch } from "react-redux";
+import { login, register } from "../../../redux/action/auth";
 function Signin() {
   const [state, setstate] = useState({
     email: "",
@@ -13,9 +13,12 @@ function Signin() {
     setstate({ ...state, [e.target.id]: e.target.value });
   };
 
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+    dispatch(login(state, history));
   };
 
   return (
