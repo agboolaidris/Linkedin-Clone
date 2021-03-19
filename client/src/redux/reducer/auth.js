@@ -15,7 +15,11 @@ const Reducer = (state = initialState, action) => {
 
     case type.REGISTER_ERROR:
       toast.warning(action.payload.msg);
-      return state;
+      return {
+        ...state,
+        isAuthenticated: false,
+        isLoading: false,
+      };
       break;
 
     case type.LOGIN_SUCCESS:
@@ -28,7 +32,26 @@ const Reducer = (state = initialState, action) => {
       break;
 
     case type.LOGIN_ERROR:
-      toast.warning(action.payload.msg);
+      toast.warning(action.payload?.msg);
+      return {
+        ...state,
+        isAuthenticated: false,
+        isLoading: false,
+        user: {},
+      };
+      break;
+
+    case type.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        isAuthenticated: false,
+        user: {},
+      };
+      break;
+
+    case type.LOGOUT_ERROR:
+      toast.warning(action.payload?.msg);
       return state;
       break;
 

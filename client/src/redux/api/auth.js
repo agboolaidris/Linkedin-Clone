@@ -7,3 +7,6 @@ export const login = (data) =>
 
 export const persistance = () =>
   axios.get("/auth/persistence", { withCredentials: true });
+
+export const logout = () =>
+  axios.post("/auth/logout", {}, { withCredentials: true });

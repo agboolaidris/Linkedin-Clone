@@ -1,5 +1,8 @@
 export const REGISTER_ERROR = "REGISTER-ERROR";
 export const REGISTER_SUCCESS = "RESGISTER-SUCCESS";
 
-export const LOGIN_ERROR = "LOGIN-ERROR";
 export const LOGIN_SUCCESS = "LOGIN-SUCCESS";
+export const LOGIN_ERROR = "LOGIN-ERROR";
+
+export const LOGOUT_SUCCESS = "LOGOUT-SUCCESS";
+export const LOGOUT_ERROR = "LOGOUT-ERROR";

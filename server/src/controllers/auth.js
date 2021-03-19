@@ -63,7 +63,7 @@ exports.deleteAccount = async (req, res) => {
   }
 };
 
-//@route POST api/auth/persistence
+//@route GET api/auth/persistence
 //@desc  persistence Login
 //@access PRIVATE route
 
@@ -75,5 +75,18 @@ exports.persistenceLogin = async (req, res) => {
     res.json(user);
   } catch (error) {
     res.json(500).json({ msg: error.message });
+  }
+};
+
+//@route  POST api/auth/persistence
+//@desc   Logout user
+//@access PRIVATE route
+exports.logout = async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req.userID });
+    if (!user) return res.status(404).json({ msg: "user not found" });
+    res.clearCookie("access-token").json({ msg: "user logout" });
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
   }
 };

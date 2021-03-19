@@ -4,6 +4,7 @@ const {
   login,
   deleteAccount,
   persistenceLogin,
+  logout,
 } = require("../controllers/auth");
 const { validateRegister, validateLogin } = require("../validator/auth");
 const Auth = require("../middleware/auth");
@@ -29,6 +30,11 @@ Route.post("/login", [validateLogin], login);
 //@desc   Persistence Login
 //@access PRIVATE route
 Route.get("/persistence", [Auth], persistenceLogin);
+
+//@route  GET api/auth/user
+//@desc   logout user account
+//@access PRIVATE route
+Route.post("/logout", [Auth], logout);
 
 //@route DELETE api/auth/user
 //@desc  delete user account

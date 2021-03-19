@@ -7,7 +7,7 @@ export const checkLogin = () => {
       const data = await api.persistance();
       dispatch({ type: type.LOGIN_SUCCESS, payload: data.data });
     } catch (error) {
-      dispatch({ type: type.LOGIN_ERROR, payload: error.response.data });
+      dispatch({ type: type.LOGIN_ERROR });
     }
   };
 };
@@ -32,6 +32,17 @@ export const login = (state, history) => {
       history.push("/dashboard");
     } catch (error) {
       dispatch({ type: type.LOGIN_ERROR, payload: error.response.data });
+    }
+  };
+};
+
+export const logout = () => {
+  return async (dispatch) => {
+    try {
+      const data = await api.logout();
+      dispatch({ type: type.LOGOUT_SUCCESS });
+    } catch (error) {
+      dispatch({ type: type.LOGOUT_ERROR });
     }
   };
 };
