@@ -1,4 +1,4 @@
-$blue: #3f72af;
+$blue: hsl(213, 47%, 47%);
 $blue-blue: #112d4e;
 $blue-white: #dbe2ef;
 $white: #f9f7f7;
@@ -26,6 +26,7 @@ html {
 
 .container {
   padding: 0 8%;
+  // position: relative;
 }
 
 //config loading
@@ -37,6 +38,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
 }
 .loading-false {
   display: none;

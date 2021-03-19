@@ -4,6 +4,7 @@ import home from "../../../img/home.svg";
 import man from "../../../img/man.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Loading from "../../../utilis/loading";
 function Home() {
   return (
     <div className=" home">

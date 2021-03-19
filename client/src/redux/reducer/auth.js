@@ -17,7 +17,10 @@ const Reducer = (state = initialState, action) => {
 
     case type.REGISTER_SUCCESS:
       toast.success("Congratulation you are now a member!!! Kindly Login");
-      return state;
+      return {
+        ...state,
+        isLoading: false,
+      };
       break;
 
     case type.REGISTER_ERROR:

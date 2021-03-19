@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { register } from "../../../redux/action/auth";
 import { toast } from "react-toastify";
+import Loading from "../../../utilis/loading";
 function Signup() {
   const [state, setstate] = useState({
     step: 1,
@@ -65,6 +66,7 @@ function Signup() {
       <div className="signin-link">
         Already have an account? <Link to="/signin">Sign In</Link>
       </div>
+      <Loading />
     </div>
   );
 }
