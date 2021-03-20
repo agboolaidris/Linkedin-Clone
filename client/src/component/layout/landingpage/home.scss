@@ -1,122 +1,122 @@
-// .home {
-//   .header {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     height: 90vh;
-//     overflow: hidden;
-//     padding: $padding;
-//     .content {
-//       width: 50%;
-//       display: flex;
-//       flex-direction: column;
-//       h1 {
-//         font-size: 50px;
-//         font-family: $italic;
-//         font-weight: 100px;
-//         color: $blue;
-//       }
+.home {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    overflow: hidden;
+    padding: $padding;
+    .content {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: 50px;
+        font-family: $italic;
+        font-weight: 100px;
+        color: $blue;
+      }
 
-//       a {
-//         text-decoration: none;
-//         color: $blue-blue;
-//         border: 1px solid $blue-white;
-//         width: 70%;
-//         padding: 1em 0.8em;
-//         margin-top: 1em;
-//         border-radius: 10px;
-//         display: flex;
-//         justify-content: space-between;
-//         transition: all 0.5s ease-out;
-//       }
+      a {
+        text-decoration: none;
+        color: $blue-blue;
+        border: 1px solid $blue-white;
+        width: 70%;
+        padding: 1em 0.8em;
+        margin-top: 1em;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.5s ease-out;
+      }
 
-//       a:hover {
-//         border: none;
-//         background-color: $blue-white;
-//       }
-//     }
-//     .svg {
-//       width: 50%;
-//       img {
-//         width: 140%;
-//       }
-//     }
-//   }
-//   .main {
-//     margin-top: 2em;
-//     min-height: 90vh;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     background-color: $blue-white;
-//     padding: $padding;
-//     .main-content {
-//       width: 50%;
-//       h1 {
-//         color: $blue;
-//         font-size: 50px;
-//         font-weight: bolder;
-//         font-family: $italic;
-//       }
-//       p {
-//         font-size: 25px;
-//         margin-top: 1em;
-//         font-weight: lighter;
-//       }
-//     }
-//     .main-imgbx {
-//       width: 50%;
+      a:hover {
+        border: none;
+        background-color: $blue-white;
+      }
+    }
+    .svg {
+      width: 50%;
+      img {
+        width: 140%;
+      }
+    }
+  }
+  .main {
+    margin-top: 2em;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $blue-white;
+    padding: $padding;
+    .main-content {
+      width: 50%;
+      h1 {
+        color: $blue;
+        font-size: 50px;
+        font-weight: bolder;
+        font-family: $italic;
+      }
+      p {
+        font-size: 25px;
+        margin-top: 1em;
+        font-weight: lighter;
+      }
+    }
+    .main-imgbx {
+      width: 50%;
 
-//       .imgbx {
-//         margin: 0 auto;
-//         width: 300px;
-//         border-radius: 50%;
-//         img {
-//           width: 100%;
-//           height: 300px;
-//           border-radius: 50%;
-//         }
-//       }
-//     }
-//   }
-// }
-// @media only screen and (max-width: 700px) {
-//   .home {
-//     .header {
-//       flex-direction: column;
-//       height: max-content;
-//       .content {
-//         width: 100%;
-//         h1 {
-//           font-size: 30px;
-//           margin: 0.6em 0;
-//         }
-//         a {
-//           width: 100%;
-//         }
-//       }
+      .imgbx {
+        margin: 0 auto;
+        width: 300px;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 300px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .home {
+    .header {
+      flex-direction: column;
+      height: max-content;
+      .content {
+        width: 100%;
+        h1 {
+          font-size: 30px;
+          margin: 0.6em 0;
+        }
+        a {
+          width: 100%;
+        }
+      }
 
-//       .svg {
-//         margin-top: 1em;
-//         width: 100%;
-//       }
-//     }
+      .svg {
+        margin-top: 1em;
+        width: 100%;
+      }
+    }
 
-//     .main {
-//       flex-direction: column-reverse;
-//       justify-content: space-evenly;
-//       .main-content {
-//         width: 100%;
-//         h1 {
-//           font-size: 30px;
-//         }
-//         p {
-//           font-size: 20px;
-//         }
-//       }
-//       .main-imgbx {
-//         width: 100%;
-//       }
-//     }
-//   }
-// }
+    .main {
+      flex-direction: column-reverse;
+      justify-content: space-evenly;
+      .main-content {
+        width: 100%;
+        h1 {
+          font-size: 30px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+      .main-imgbx {
+        width: 100%;
+      }
+    }
+  }
+}

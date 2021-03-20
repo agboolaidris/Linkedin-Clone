@@ -1,21 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import user from "../../../img/user.svg";
 import ProfileNav from "./profileNav";
 function Client() {
   return (
     <>
-      <li className="">
+      <li className="cli-nav-li">
         <Link to="/">
           <FontAwesomeIcon icon={faHome} />
-          <br />
           Home
         </Link>
       </li>
       <li className="dropdown">
-        <img src={user} />
+        <div>
+          <img src={user} />
+          <span>
+            Me <FontAwesomeIcon icon={faCaretDown} />
+          </span>
+        </div>
+
         <ProfileNav />
       </li>
     </>

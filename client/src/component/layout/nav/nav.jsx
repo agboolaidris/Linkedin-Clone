@@ -33,9 +33,9 @@ function Navbar() {
         </div>
         <ul className={harmburger ? "menu menu-mobile " : " menu"}>
           {!isAuthenticated ? (
-            <Client setharmburger={setharmburger} />
-          ) : (
             <Guest setharmburger={setharmburger} />
+          ) : (
+            <Client setharmburger={setharmburger} />
           )}
         </ul>
       </nav>

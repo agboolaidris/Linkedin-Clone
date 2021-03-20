@@ -4,7 +4,7 @@ import { logout } from "../../redux/action/auth";
 function Dashboard() {
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="dashboard">
       Dashboard <button onClick={() => dispatch(logout())}>Logout</button>
     </div>
   );

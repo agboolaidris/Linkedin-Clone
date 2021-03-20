@@ -1,12 +1,13 @@
 header {
   padding: $padding;
-  background-color: blue;
-
+  min-height: 10vh;
+  position: sticky;
+  top: 0;
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    min-height: inherit;
     .harmburger {
       display: none; //harmburger display none on large device
     }
@@ -22,28 +23,49 @@ header {
       li {
         font-size: large;
         font-weight: bolder;
-        margin: 0.6em 0.8em;
+
         a {
           color: $blue;
           text-decoration: none;
           display: block;
         }
       }
-
-      li:hover {
-        background-color: $blue-white;
-      }
     }
     .menu {
       display: flex;
+      & > li {
+        margin-left: 2em;
+      }
+      //style quest link
+      .gue-nav-link {
+        padding: 0.6em 1em;
+        border-radius: 20px;
+        &:hover {
+          background: $blue-white;
+        }
+      }
 
+      .signin-nav-link {
+        border: 1px solid $blue;
+      }
       .dropdown {
         position: relative;
-        background: lightcoral;
         width: max-content;
+        & > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+          }
+        }
         .sub-menu {
           position: absolute;
-          background-color: lawngreen;
+          background-color: $blue-white;
+          margin-top: 1em;
+          right: 0;
         }
       }
     }
