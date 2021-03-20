@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(checkLogin());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">

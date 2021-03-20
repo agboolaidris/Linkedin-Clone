@@ -7,4 +7,13 @@ export const LOGIN_ERROR = "LOGIN-ERROR";
 export const LOGOUT_SUCCESS = "LOGOUT-SUCCESS";
 export const LOGOUT_ERROR = "LOGOUT-ERROR";
 
-export const ISLOADING = "ISLOADING";
+export const AUTH_LOADING = "AUTH-ISLOADING";
+
+//profile type
+export const GET_USER_PROFILE = "GET-USER-PROFILE";
+export const POST_USER_PROFILE = "POST-USER-PROFILE";
+export const CLEAR_USER_PROFILE = "CLEAR-USER-PROFILE";
+export const GET_ALL_PROFILE = "GET-ALL-PROFILE";
+export const GET_SINGLE_PROFILE = "GET-SINGLE-PROFILE";
+
+export const PROFILE_LOADING = "PROFILE-LOADING";

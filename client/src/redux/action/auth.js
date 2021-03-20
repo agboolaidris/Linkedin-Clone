@@ -3,7 +3,7 @@ import * as type from "./type";
 
 export const checkLogin = () => {
   return async (dispatch) => {
-    dispatch({ type: type.ISLOADING });
+    dispatch({ type: type.AUTH_LOADING });
     try {
       const data = await api.persistance();
       dispatch({ type: type.LOGIN_SUCCESS, payload: data.data });
@@ -15,7 +15,7 @@ export const checkLogin = () => {
 
 export const register = (state, history) => {
   return async (dispatch) => {
-    dispatch({ type: type.ISLOADING });
+    dispatch({ type: type.AUTH_LOADING });
     try {
       const data = await api.register(state);
       dispatch({ type: type.REGISTER_SUCCESS, payload: data.msg });
@@ -28,7 +28,7 @@ export const register = (state, history) => {
 
 export const login = (state, history) => {
   return async (dispatch) => {
-    dispatch({ type: type.ISLOADING });
+    dispatch({ type: type.AUTH_LOADING });
     try {
       const data = await api.login(state);
       dispatch({ type: type.LOGIN_SUCCESS, payload: data.data });
@@ -41,7 +41,7 @@ export const login = (state, history) => {
 
 export const logout = () => {
   return async (dispatch) => {
-    dispatch({ type: type.ISLOADING });
+    dispatch({ type: type.AUTH_LOADING });
     try {
       const data = await api.logout();
       dispatch({ type: type.LOGOUT_SUCCESS });
