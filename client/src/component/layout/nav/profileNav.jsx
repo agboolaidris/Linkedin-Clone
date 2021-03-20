@@ -1,6 +1,6 @@
 import React from "react";
 import user from "../../../img/user.svg";
-function ProfileNav({ toggleDropdown }) {
+function ProfileNav({ toggleDropdown, setharmburger }) {
   return (
     <ul className={toggleDropdown ? "sub-menu sub-menu-show" : "sub-menu"}>
       <li className="user-info">
@@ -12,11 +12,13 @@ function ProfileNav({ toggleDropdown }) {
         </div>
       </li>
 
-      <li className="view-profile-link">
+      <li className="view-profile-link" onClick={() => setharmburger(false)}>
         <a hfef="#">View Profile</a>
       </li>
       <div className="underline"></div>
-      <li className="logout">Sign out</li>
+      <li className="logout" onClick={() => setharmburger(false)}>
+        Sign out
+      </li>
     </ul>
   );
 }

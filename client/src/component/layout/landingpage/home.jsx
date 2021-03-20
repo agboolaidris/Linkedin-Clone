@@ -8,7 +8,7 @@ import Loading from "../../../utilis/loading";
 function Home() {
   return (
     <div className=" home">
-      <div className="header container">
+      <div className="content-wrapper">
         <div className="content">
           <h1>Welcome to your professional community</h1>
 

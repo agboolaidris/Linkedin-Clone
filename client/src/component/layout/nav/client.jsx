@@ -4,16 +4,17 @@ import { faHome, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import user from "../../../img/user.svg";
 import ProfileNav from "./profileNav";
-function Client() {
+function Client({ setharmburger }) {
   const [toggleDropdown, settoggleDropdown] = useState(false);
   return (
     <>
-      <li className="cli-nav-link">
+      <li className="cli-nav-link" onClick={() => setharmburger(false)}>
         <Link to="/">
           <FontAwesomeIcon icon={faHome} />
           <span>Home</span>
         </Link>
       </li>
+
       <li
         className="dropdown cli-nav-link"
         onClick={() =>
@@ -27,7 +28,10 @@ function Client() {
           </span>
         </div>
 
-        <ProfileNav toggleDropdown={toggleDropdown} />
+        <ProfileNav
+          toggleDropdown={toggleDropdown}
+          setharmburger={setharmburger}
+        />
       </li>
     </>
   );
