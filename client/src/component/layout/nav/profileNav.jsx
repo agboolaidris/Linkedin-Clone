@@ -1,6 +1,14 @@
 import React from "react";
 import user from "../../../img/user.svg";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../redux/action/auth";
 function ProfileNav({ toggleDropdown, setharmburger }) {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    setharmburger(false);
+    dispatch(logout());
+  };
+
   return (
     <ul className={toggleDropdown ? "sub-menu sub-menu-show" : "sub-menu"}>
       <li className="user-info">
@@ -16,7 +24,7 @@ function ProfileNav({ toggleDropdown, setharmburger }) {
         <a hfef="#">View Profile</a>
       </li>
       <div className="underline"></div>
-      <li className="logout" onClick={() => setharmburger(false)}>
+      <li className="logout" onClick={handleLogout}>
         Sign out
       </li>
     </ul>

@@ -1,0 +1,19 @@
+.input {
+  margin: 0.6em auto;
+  width: 100%;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  padding: 0.2em;
+  label {
+    font-weight: bolder;
+  }
+  input {
+    padding: 0.3em 0;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+  }
+}

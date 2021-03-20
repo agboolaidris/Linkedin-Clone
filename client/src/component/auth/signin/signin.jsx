@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/action/auth";
 import Loading from "../../../utilis/loading";
+import TextFieldGroup from "../../common/testFieldGroup";
 
 function Signin() {
   const [state, setstate] = useState({
@@ -30,30 +31,28 @@ function Signin() {
           <h1>Sign in</h1>
           <p>Stay updated on your professional world</p>
         </div>
-        <div className="input">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            required
-            autoComplete="true"
-            onChange={handleChange}
-            value={state.email}
-            id="email"
-          />
-        </div>
-        <div className="input">
-          <label htmlFor="">password</label>
-          <input
-            type="password"
-            required
-            autoComplete="true"
-            onChange={handleChange}
-            value={state.password}
-            id="password"
-          />
-        </div>
+        <TextFieldGroup
+          label="Email"
+          placeholder="Email address"
+          value={state.email}
+          onChange={handleChange}
+          required={true}
+          autoComplete={true}
+          type="email"
+          id="email"
+        />
 
-        <Link>Forget Password?</Link>
+        <TextFieldGroup
+          placeholder="enter password"
+          value={state.password}
+          label="Password"
+          onChange={handleChange}
+          autoComplete={true}
+          required={true}
+          id="password"
+          type="password"
+        />
+        <Link to="/signin">Forget Password?</Link>
 
         <button>Sign in</button>
       </form>

@@ -18,7 +18,7 @@ function Navbar() {
   };
 
   return (
-    <header className={isAuthenticated && "header"}>
+    <header className={isAuthenticated ? "header" : ""}>
       <nav className="nav">
         <div className="harmburger" onClick={handleHarmbuger}>
           {harmburger ? (
