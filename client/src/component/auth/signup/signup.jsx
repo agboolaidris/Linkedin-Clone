@@ -46,11 +46,11 @@ function Signup() {
   };
 
   return (
-    <div className="signup container">
+    <>
       {isLoading ? (
         <Loading isLoading={isLoading} />
       ) : (
-        <>
+        <div className="signup ">
           <h1>Make the most of your professional life</h1>
           <form className="form" onSubmit={handleSubmit}>
             {state.step === 1 ? (
@@ -72,9 +72,9 @@ function Signup() {
           <div className="signin-link">
             Already have an account? <Link to="/signin">Sign In</Link>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 

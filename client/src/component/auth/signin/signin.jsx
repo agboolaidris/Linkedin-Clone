@@ -26,11 +26,11 @@ function Signin() {
   };
 
   return (
-    <div className="signin">
+    <>
       {isLoading ? (
         <Loading isLoading={isLoading} />
       ) : (
-        <>
+        <div className="signin">
           <form onSubmit={handleSubmit}>
             <div className="form-content">
               <h1>Sign in</h1>
@@ -66,9 +66,9 @@ function Signin() {
           <div className="register-link">
             New to LinkediIn? <Link to="/signup">Join now</Link>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
