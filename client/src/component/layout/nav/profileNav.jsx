@@ -1,17 +1,22 @@
 import React from "react";
-
-function ProfileNav() {
+import user from "../../../img/user.svg";
+function ProfileNav({ toggleDropdown }) {
   return (
-    <ul className="sub-menu">
-      <li>
-        <a hfef="#">HOME</a>
+    <ul className={toggleDropdown ? "sub-menu sub-menu-show" : "sub-menu"}>
+      <li className="user-info">
+        <img src={user} alt="" />
+        <div>
+          <p>Idris I Agboola</p>
+
+          <p>Software Developer</p>
+        </div>
       </li>
-      <li>
-        <a hfef="#">HOME</a>
+
+      <li className="view-profile-link">
+        <a hfef="#">View Profile</a>
       </li>
-      <li>
-        <a hfef="#">HOME</a>
-      </li>
+      <div className="underline"></div>
+      <li className="logout">Sign out</li>
     </ul>
   );
 }
