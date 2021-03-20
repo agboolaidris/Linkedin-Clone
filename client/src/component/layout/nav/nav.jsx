@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 function Navbar() {
   const [harmburger, setharmburger] = useState(false);
   const isAuthenticated = useSelector((state) => state.Auth.isAuthenticated);
+
   const handleHarmbuger = () => {
     if (harmburger) {
       setharmburger(false);
@@ -15,8 +16,9 @@ function Navbar() {
       setharmburger(true);
     }
   };
+
   return (
-    <header className="container">
+    <header>
       <nav className="nav">
         <div className="harmburger" onClick={handleHarmbuger}>
           {harmburger ? (
@@ -29,11 +31,11 @@ function Navbar() {
           <span>Linked</span>
           <FontAwesomeIcon icon={faLinkedin} />
         </div>
-        <ul className={harmburger ? "ul ul-mobile " : " ul"}>
+        <ul className={harmburger ? "menu menu-mobile " : " menu"}>
           {!isAuthenticated ? (
-            <Guest setharmburger={setharmburger} />
-          ) : (
             <Client setharmburger={setharmburger} />
+          ) : (
+            <Guest setharmburger={setharmburger} />
           )}
         </ul>
       </nav>

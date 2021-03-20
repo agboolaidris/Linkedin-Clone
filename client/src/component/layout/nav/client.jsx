@@ -14,7 +14,7 @@ function Client() {
           Home
         </Link>
       </li>
-      <li className="user-profile">
+      <li className="dropdown">
         <img src={user} />
         <ProfileNav />
       </li>

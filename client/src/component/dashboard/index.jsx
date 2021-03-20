@@ -5,8 +5,7 @@ function Dashboard() {
   const dispatch = useDispatch();
   return (
     <div>
-      Dashboard
-      <button onClick={() => dispatch(logout())}>Logout</button>
+      Dashboard <button onClick={() => dispatch(logout())}>Logout</button>
     </div>
   );
 }

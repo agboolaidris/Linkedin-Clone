@@ -1,96 +1,51 @@
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 10vh;
-  z-index: 10;
-  top: 0;
-  .logo {
-    font-size: 30px;
-    color: $blue;
-  }
-  .harmburger {
-    display: none;
-  }
+header {
+  padding: $padding;
+  background-color: blue;
 
-  .ul {
+  nav {
     display: flex;
-    list-style: none;
+    justify-content: space-between;
+    align-items: center;
 
-    li {
-      margin-left: 2em;
-      width: 100px;
-      padding: 0.6em;
-      text-align: center;
-      font-weight: bolder;
-      a {
-        text-decoration: none;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .btn-guest {
-      opacity: 0.7;
-      a {
-        color: $blue-blue;
-      }
-    }
-    .btn-guest:hover {
-      background-color: $blue-white;
-      border-radius: 10px;
-      opacity: 1;
-    }
-    .btn-signin {
-      border: 1px solid $blue;
-      border-radius: 50px;
-      a {
-        color: $blue;
-      }
-    }
-    .btn-signin:hover {
-      background-color: $blue-white;
-    }
-    .user-profile {
-      position: relative;
-      .profilenav {
-        background: yellow;
-        width: 200px;
-        min-height: 200px;
-        position: absolute;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .nav {
-    .ul {
-      position: fixed;
-      top: 0;
-      left: 0;
-      flex-direction: column;
-      align-self: center;
-      justify-content: center;
-      background-color: $blue-white;
-      width: 70%;
-      height: 100%;
-      transform: translateX(-1000%);
-      transition: all 0.5s ease-out;
-      li {
-        width: 90%;
-        margin-left: 0;
-        margin: 1em auto 0;
-      }
-    }
-
-    .ul.ul-mobile {
-      transform: translateX(0);
-    }
     .harmburger {
-      display: block;
+      display: none; //harmburger display none on large device
+    }
+    //style the logo of the company
+    .logo {
       color: $blue;
-      z-index: 12;
+      font-size: 2rem;
+    }
+
+    //general style for all ul in nav
+    ul {
+      list-style: none;
+      li {
+        font-size: large;
+        font-weight: bolder;
+        margin: 0.6em 0.8em;
+        a {
+          color: $blue;
+          text-decoration: none;
+          display: block;
+        }
+      }
+
+      li:hover {
+        background-color: $blue-white;
+      }
+    }
+    .menu {
+      display: flex;
+
+      .dropdown {
+        position: relative;
+        background: lightcoral;
+        width: max-content;
+        .sub-menu {
+          position: absolute;
+          background-color: lawngreen;
+        }
+      }
     }
   }
 }
