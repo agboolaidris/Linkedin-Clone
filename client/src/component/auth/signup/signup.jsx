@@ -47,28 +47,33 @@ function Signup() {
 
   return (
     <div className="signup container">
-      <h1>Make the most of your professional life</h1>
-      <form className="form" onSubmit={handleSubmit}>
-        {state.step === 1 ? (
-          <Step1
-            nextstep={nextstep}
-            handleChange={handleChange}
-            setstate={setstate}
-            state={state}
-          />
-        ) : (
-          <Step2
-            nextstep={nextstep}
-            handleChange={handleChange}
-            setstate={setstate}
-            state={state}
-          />
-        )}
-      </form>
-      <div className="signin-link">
-        Already have an account? <Link to="/signin">Sign In</Link>
-      </div>
-      <Loading isLoading={isLoading} />
+      {isLoading ? (
+        <Loading isLoading={isLoading} />
+      ) : (
+        <>
+          <h1>Make the most of your professional life</h1>
+          <form className="form" onSubmit={handleSubmit}>
+            {state.step === 1 ? (
+              <Step1
+                nextstep={nextstep}
+                handleChange={handleChange}
+                setstate={setstate}
+                state={state}
+              />
+            ) : (
+              <Step2
+                nextstep={nextstep}
+                handleChange={handleChange}
+                setstate={setstate}
+                state={state}
+              />
+            )}
+          </form>
+          <div className="signin-link">
+            Already have an account? <Link to="/signin">Sign In</Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -27,42 +27,47 @@ function Signin() {
 
   return (
     <div className="signin">
-      <form onSubmit={handleSubmit}>
-        <div className="form-content">
-          <h1>Sign in</h1>
-          <p>Stay updated on your professional world</p>
-        </div>
+      {isLoading ? (
+        <Loading isLoading={isLoading} />
+      ) : (
+        <>
+          <form onSubmit={handleSubmit}>
+            <div className="form-content">
+              <h1>Sign in</h1>
+              <p>Stay updated on your professional world</p>
+            </div>
 
-        <TextFieldGroup
-          label="Email"
-          placeholder="Email address"
-          value={state.email}
-          onChange={handleChange}
-          required={true}
-          autoComplete={true}
-          type="email"
-          id="email"
-        />
+            <TextFieldGroup
+              label="Email"
+              placeholder="Email address"
+              value={state.email}
+              onChange={handleChange}
+              required={true}
+              autoComplete={true}
+              type="email"
+              id="email"
+            />
 
-        <TextFieldGroup
-          placeholder="enter password"
-          value={state.password}
-          label="Password"
-          onChange={handleChange}
-          autoComplete={true}
-          required={true}
-          id="password"
-          type="password"
-        />
+            <TextFieldGroup
+              placeholder="enter password"
+              value={state.password}
+              label="Password"
+              onChange={handleChange}
+              autoComplete={true}
+              required={true}
+              id="password"
+              type="password"
+            />
 
-        <Link to="/signin">Forget Password?</Link>
+            <Link to="/signin">Forget Password?</Link>
 
-        <button>Sign in</button>
-      </form>
-      <div className="register-link">
-        New to LinkediIn? <Link to="/signup">Join now</Link>
-      </div>
-      <Loading isLoading={isLoading} />
+            <button>Sign in</button>
+          </form>
+          <div className="register-link">
+            New to LinkediIn? <Link to="/signup">Join now</Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }
