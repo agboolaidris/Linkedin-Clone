@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Step1 from "./step1";
 import Step2 from "./step2";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../../redux/action/auth";
 import { toast } from "react-toastify";
 import Loading from "../../../utilis/loading";
@@ -18,6 +18,7 @@ function Signup() {
 
   const dispatch = useDispatch();
   const history = useHistory();
+  const isLoading = useSelector((state) => state.Auth.isLoading);
 
   const nextstep = () => {
     setstate({
@@ -43,6 +44,7 @@ function Signup() {
       dispatch(register(state, history));
     }
   };
+
   return (
     <div className="signup container">
       <h1>Make the most of your professional life</h1>
@@ -66,7 +68,7 @@ function Signup() {
       <div className="signin-link">
         Already have an account? <Link to="/signin">Sign In</Link>
       </div>
-      <Loading />
+      <Loading isLoading={isLoading} />
     </div>
   );
 }

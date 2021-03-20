@@ -16,7 +16,7 @@ function TextFieldGroup({
       <input
         type={type}
         required={required}
-        autoComplete={autoComplete.toString()}
+        autoComplete={autoComplete?.toString()}
         onChange={onChange}
         value={value}
         id={id}

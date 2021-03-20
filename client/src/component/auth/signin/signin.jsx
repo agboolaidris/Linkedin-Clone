@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../redux/action/auth";
 import Loading from "../../../utilis/loading";
-import TextFieldGroup from "../../common/testFieldGroup";
+import TextFieldGroup from "../../../common/testFieldGroup/testFieldGroup";
 
 function Signin() {
+  const isLoading = useSelector((state) => state.Auth.isLoading);
   const [state, setstate] = useState({
     email: "",
     password: "",
@@ -25,12 +26,13 @@ function Signin() {
   };
 
   return (
-    <div className="signin container">
+    <div className="signin">
       <form onSubmit={handleSubmit}>
         <div className="form-content">
           <h1>Sign in</h1>
           <p>Stay updated on your professional world</p>
         </div>
+
         <TextFieldGroup
           label="Email"
           placeholder="Email address"
@@ -52,6 +54,7 @@ function Signin() {
           id="password"
           type="password"
         />
+
         <Link to="/signin">Forget Password?</Link>
 
         <button>Sign in</button>
@@ -59,7 +62,7 @@ function Signin() {
       <div className="register-link">
         New to LinkediIn? <Link to="/signup">Join now</Link>
       </div>
-      <Loading />
+      <Loading isLoading={isLoading} />
     </div>
   );
 }

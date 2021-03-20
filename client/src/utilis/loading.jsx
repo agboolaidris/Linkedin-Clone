@@ -1,14 +1,10 @@
 import React from "react";
-import { CircleLoader, PacmanLoader, RingLoader } from "react-spinners";
-import { css } from "@emotion/react";
-import { useSelector } from "react-redux";
+import { RingLoader } from "react-spinners";
 
-function Loading() {
-  const isLoading = useSelector((state) => state.Auth.isLoading);
-
+function Loading({ isLoading }) {
   return (
     <div className={isLoading ? "loading" : "loading-false"}>
-      <RingLoader loading={true} size={100} color="#112d4e" />
+      <RingLoader loading={isLoading} size={100} color="#112d4e" />
     </div>
   );
 }

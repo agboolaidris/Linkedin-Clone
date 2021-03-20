@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import TextFieldGroup from "../../../common/testFieldGroup/testFieldGroup";
 function Step2({ setstate, handleChange, nextstep, state }) {
   const prevstep = () => {
     setstate({ ...state, step: state.step - 1 });
@@ -11,28 +12,24 @@ function Step2({ setstate, handleChange, nextstep, state }) {
         <FontAwesomeIcon icon={faArrowLeft} />
         Back
       </button>
-      <div className="input">
-        <label htmlFor="">password</label>
-        <input
-          type="password"
-          required
-          placeholder="password most be greater than six characters"
-          onChange={handleChange}
-          value={state.password}
-          id="password"
-        />
-      </div>
-      <div className="input">
-        <label htmlFor="">confirm password</label>
-        <input
-          type="password"
-          required
-          placeholder="confirm password"
-          onChange={handleChange}
-          value={state.password2}
-          id="password2"
-        />
-      </div>
+      <TextFieldGroup
+        label="Password"
+        type="password"
+        required={true}
+        placeholder="enter password"
+        value={state.password}
+        id="password"
+        onChange={handleChange}
+      />
+      <TextFieldGroup
+        label="Confirm Password"
+        required={true}
+        placeholder="confirm password"
+        value={state.password2}
+        id="password2"
+        type="password"
+        onChange={handleChange}
+      />
 
       <p>
         By clicking Agree & Join, you agree to the LinkedIn User Agreement,

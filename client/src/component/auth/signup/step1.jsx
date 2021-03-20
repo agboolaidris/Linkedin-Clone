@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+import TextFieldGroup from "../../../common/testFieldGroup/testFieldGroup";
 function Step1({ setstate, handleChange, nextstep, state }) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -18,28 +19,22 @@ function Step1({ setstate, handleChange, nextstep, state }) {
   };
   return (
     <>
-      <div className="input">
-        <label htmlFor="">Email</label>
-        <input
-          type="email"
-          required
-          placeholder="email most be valid"
-          onChange={handleChange}
-          value={state.email}
-          id="email"
-        />
-      </div>
-      <div className="input">
-        <label htmlFor="">username</label>
-        <input
-          type="text"
-          required
-          placeholder="username most be unique"
-          onChange={handleChange}
-          value={state.username}
-          id="username"
-        />
-      </div>
+      <TextFieldGroup
+        label="Email"
+        required={true}
+        placeholder="Email most be valid"
+        onChange={handleChange}
+        value={state.email}
+        id="email"
+      />
+      <TextFieldGroup
+        label="Username"
+        required={true}
+        placeholder="username most be unique"
+        onChange={handleChange}
+        value={state.username}
+        id="username"
+      />
 
       <button onClick={handleClick} type="button" className="submit-btn">
         Join Professionals
