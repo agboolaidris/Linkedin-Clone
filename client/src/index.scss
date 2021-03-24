@@ -1,11 +1,14 @@
 //google font link
 @import url("https://fonts.googleapis.com/css2?family=Redressed&family=Roboto:wght@300&display=swap");
 
-@import "./style/config.scss";
-@import "./style/toast.scss";
-@import "./component/layout/nav/nav.scss";
-@import "./component/layout/landingpage/home.scss";
-@import "./component//auth//signin/signin.scss";
-@import "./component/auth/signup/signup.scss";
-@import "./component/dashboard/dashboard.scss";
-@import "./common/testFieldGroup/testFieldGroup.scss";
+@import "./assets/style/config.scss";
+@import "./assets/style/toast.scss";
+
+@import "./pages/landingpage/home.scss";
+
+// @import "./component/layout/nav/nav.scss";
+//
+// @import "./component//auth//signin/signin.scss";
+// @import "./component/auth/signup/signup.scss";
+// @import "./component/dashboard/dashboard.scss";
+// @import "./common/testFieldGroup/testFieldGroup.scss";

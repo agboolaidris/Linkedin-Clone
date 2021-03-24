@@ -8,8 +8,8 @@ function Public() {
   return (
     <>
       <Route exact component={Home} path="/" />
-      <Route exact component={Signin} path="/signin" />
-      <Route exact component={Signup} path="/signup" />
+      {/* <Route exact component={Signin} path="/signin" />
+      <Route exact component={Signup} path="/signup" /> */}
     </>
   );
 }

@@ -23,15 +23,6 @@ header {
     //general style for all ul in nav
     ul {
       list-style: none;
-      li {
-        a {
-          color: $blue;
-          text-decoration: none;
-          display: block;
-          font-size: large;
-          font-weight: bolder;
-        }
-      }
     }
     .menu {
       display: flex;
@@ -42,29 +33,11 @@ header {
         margin-left: 2em;
       }
       //style quest link
-      .gue-nav-link {
-        padding: 0.6em 1em;
-        border-radius: 20px;
-        &:hover {
-          background: $blue-white;
-        }
-      }
 
       .signin-nav-link {
         border: 1px solid $blue;
       }
       //style client link
-      .cli-nav-link {
-        a {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-
-          &:hover {
-            color: $blue-blue;
-          }
-        }
-      }
 
       .dropdown {
         position: relative;
@@ -153,15 +126,6 @@ header {
         flex-direction: column;
         padding-top: 10vh;
         transform: translateX(-1000%);
-        & > li {
-          width: 100%;
-          margin-left: 0;
-          margin-top: 1em;
-          text-align: center;
-        }
-        .signin-nav-link {
-          text-align: center;
-        }
 
         .dropdown {
           margin-left: 0;

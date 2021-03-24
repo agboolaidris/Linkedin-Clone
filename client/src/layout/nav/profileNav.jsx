@@ -1,5 +1,5 @@
 import React from "react";
-import user from "../../../img/user.svg";
+import user from "../../assets/img/user.svg";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/action/auth";
 import { clearUserProfile } from "../../redux/action/profile";

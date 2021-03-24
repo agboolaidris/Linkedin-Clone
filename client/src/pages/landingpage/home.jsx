@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import home from "../../assets/img/home.svg";
-import man from "../../assets/img/man.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+import home from "../../assets/img/home.svg";
+import man from "../../assets/img/man.jpg";
 
 function Home() {
   return (

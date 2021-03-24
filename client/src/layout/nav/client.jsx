@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { faHome, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import user from "../../../img/user.svg";
+import user from "../../assets/img/user.svg";
 import ProfileNav from "./profileNav";
+
 function Client({ setharmburger }) {
   const [toggleDropdown, settoggleDropdown] = useState(false);
   return (
