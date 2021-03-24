@@ -1,11 +1,16 @@
 import React from "react";
-import user from "../../assets/img/user.svg";
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux/action/auth";
-import { clearUserProfile } from "../../redux/action/profile";
+
+//action middleware
+import { logout } from "../../../redux/action/auth";
+import { clearUserProfile } from "../../../redux/action/profile";
+
+//import static file
+import user from "../../../assets/img/user.svg";
 
 function ProfileNav({ toggleDropdown, setharmburger }) {
   const dispatch = useDispatch();
+
   const handleLogout = () => {
     setharmburger(false);
     dispatch(logout());

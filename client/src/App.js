@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //import Navbar from the layout folder
-import Navbar from "./layout/Header/navbar";
+import Navbar from "./layout/Header/header";
 
 //the public routes
 import Public from "./Router/public/public";
