@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "../../component/dashboard";
+import Dashboard from "../../pages/dashboard";
 import Route from "./index";
 
 function Private() {
