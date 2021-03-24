@@ -19,92 +19,6 @@ header {
       color: $blue;
       font-size: 2rem;
     }
-
-    //general style for all ul in nav
-    ul {
-      list-style: none;
-    }
-    .menu {
-      display: flex;
-      flex-direction: row;
-      height: inherit;
-      align-items: center;
-      & > li {
-        margin-left: 2em;
-      }
-      //style quest link
-
-      .signin-nav-link {
-        border: 1px solid $blue;
-      }
-      //style client link
-
-      .dropdown {
-        position: relative;
-        width: max-content;
-        color: $blue;
-        cursor: pointer;
-        &:hover {
-          color: $blue-blue;
-        }
-        & > div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          img {
-            width: 30px;
-            height: 30px;
-            border-radius: 100%;
-          }
-        }
-        .sub-menu {
-          position: absolute;
-          background-color: $blue-white;
-          border-radius: 8px;
-          margin-top: 1em;
-          right: 0;
-          min-width: 250px;
-          opacity: 0;
-          transition: all 1s ease-out;
-          .user-info {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 7px;
-            img {
-              width: 40px;
-              height: 40px;
-              border-radius: 100%;
-            }
-            & > div {
-              margin-left: 10px;
-              color: $blue-blue;
-            }
-          }
-          .underline {
-            width: 90%;
-            height: 2px;
-            background-color: $blue-white;
-            border-radius: 3px;
-            margin: 10px auto;
-          }
-          .view-profile-link {
-            border: 1px solid $blue;
-            padding: 3px;
-            margin: 5px;
-            border-radius: 20px;
-          }
-
-          .logout {
-            margin: 0 7px 7px;
-          }
-        }
-        .sub-menu.sub-menu-show {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    }
   }
 }
 
@@ -115,32 +29,6 @@ header {
         display: block;
         z-index: 10;
         color: $blue;
-      }
-      .menu {
-        position: absolute;
-        width: 70vw;
-        height: 100vh;
-        background-color: $blue-white;
-        top: 0;
-        left: 0;
-        flex-direction: column;
-        padding-top: 10vh;
-        transform: translateX(-1000%);
-
-        .dropdown {
-          margin-left: 0;
-          & > div {
-            display: none;
-          }
-          .sub-menu {
-            position: relative;
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      }
-      .menu.menu-mobile {
-        transform: translateX(0);
       }
     }
   }
