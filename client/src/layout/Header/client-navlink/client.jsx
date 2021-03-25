@@ -3,38 +3,34 @@ import { Link } from "react-router-dom";
 import { faHome, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import user from "../../../assets/img/user.svg";
-import ProfileNav from "./profileNav";
+import ProfileNav from "./profile-nav/profileNav";
 
 function Client({ setharmburger }) {
   const [toggleDropdown, settoggleDropdown] = useState(false);
   return (
-    <>
-      <li className="cli-nav-link" onClick={() => setharmburger(false)}>
+    <ul className="client-nav">
+      <li onClick={() => setharmburger(false)}>
         <Link to="/">
           <FontAwesomeIcon icon={faHome} />
           <span>Home</span>
         </Link>
       </li>
 
-      <li
-        className="dropdown cli-nav-link"
-        onClick={() =>
-          toggleDropdown ? settoggleDropdown(false) : settoggleDropdown(true)
-        }
-      >
-        <div>
+      {/* display the profile-nav on click */}
+      <li className="dropdown-link">
+        <span>
           <img src={user} />
-          <span>
+          <i>
             Me <FontAwesomeIcon icon={faCaretDown} />
-          </span>
-        </div>
+          </i>
+        </span>
 
         <ProfileNav
           toggleDropdown={toggleDropdown}
           setharmburger={setharmburger}
         />
       </li>
-    </>
+    </ul>
   );
 }
 

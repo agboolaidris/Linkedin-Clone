@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 //action middleware
-import { logout } from "../../../redux/action/auth";
-import { clearUserProfile } from "../../../redux/action/profile";
+import { logout } from "../../../../redux/action/auth";
+import { clearUserProfile } from "../../../../redux/action/profile";
 
 //import static file
-import user from "../../../assets/img/user.svg";
+import user from "../../../../assets/img/user.svg";
 
 function ProfileNav({ toggleDropdown, setharmburger }) {
   const dispatch = useDispatch();
@@ -18,24 +19,23 @@ function ProfileNav({ toggleDropdown, setharmburger }) {
   };
 
   return (
-    <ul className={toggleDropdown ? "sub-menu sub-menu-show" : "sub-menu"}>
+    <div className={toggleDropdown ? "profile-nav" : "profile-nav"}>
       <li className="user-info">
         <img src={user} alt="" />
         <div>
           <p>Idris I Agboola</p>
-
           <p>Software Developer</p>
         </div>
       </li>
 
-      <li className="view-profile-link" onClick={() => setharmburger(false)}>
-        <a hfef="#">View Profile</a>
+      <li className="profile-link" onClick={() => setharmburger(false)}>
+        <Link to="/">View Profile</Link>
       </li>
       <div className="underline"></div>
       <li className="logout" onClick={handleLogout}>
         Sign out
       </li>
-    </ul>
+    </div>
   );
 }
 

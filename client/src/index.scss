@@ -11,6 +11,7 @@
 @import "./layout/Header/header.scss";
 @import "./layout/Header/client-navlink/client.scss";
 @import "./layout/Header/guest-navlink/guest.scss";
+@import "./layout/Header/client-navlink/profile-nav/profileNav.scss";
 
 //signin
 @import "./pages/signin/signin.scss";
@@ -23,4 +24,6 @@
 //component
 @import "./components/commons/inputFieldGroup/testFieldGroup.scss";
 @import "./components/commons/buttonGroup/buttonGroup.scss";
-// @import "./component/dashboard/dashboard.scss";
+
+//dashboard
+@import "./pages/dashboard/dashboard.scss";

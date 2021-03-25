@@ -1,0 +1,20 @@
+.profile-nav {
+  position: absolute;
+  background-color: $blue-white;
+  right: 0;
+  top: 12vh;
+  padding: 0em;
+  width: 200px;
+  margin: 0;
+  margin-left: 0;
+  .user-info {
+    width: 90%;
+    background-color: lawngreen;
+    display: flex;
+    justify-content: space-between;
+  }
+  .profile-link {
+    width: 100%;
+    background-color: lemonchiffon;
+  }
+}
