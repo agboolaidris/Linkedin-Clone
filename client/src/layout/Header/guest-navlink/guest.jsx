@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Guest({ setharmburger }) {
   return (
-    <>
+    <ul className="guest-nav">
       <li className="gue-nav-link" onClick={() => setharmburger(false)}>
         <Link to="/">Home</Link>
       </li>
@@ -14,7 +14,7 @@ function Guest({ setharmburger }) {
           Sign in
         </Link>
       </li>
-    </>
+    </ul>
   );
 }
 

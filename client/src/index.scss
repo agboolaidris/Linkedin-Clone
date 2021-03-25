@@ -9,6 +9,8 @@
 
 //header page
 @import "./layout/Header/header.scss";
+@import "./layout/Header/client-navlink/client.scss";
+@import "./layout/Header/guest-navlink/guest.scss";
 
 // @import "./component//auth//signin/signin.scss";
 // @import "./component/auth/signup/signup.scss";

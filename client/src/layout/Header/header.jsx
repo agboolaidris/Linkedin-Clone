@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Client from "./client-navlink/client";
-import Guest from "./guest-navlink/guest";
+import ClientNavlink from "./client-navlink/client";
+import GuestNavlink from "./guest-navlink/guest";
 
 function Navbar() {
   const [harmburger, setharmburger] = useState(false);
@@ -32,13 +32,13 @@ function Navbar() {
           <span>Linked</span>
           <FontAwesomeIcon icon={faLinkedin} />
         </div>
-        <ul className={harmburger ? "menu menu-mobile " : " menu"}>
-          {!isAuthenticated ? (
-            <Guest setharmburger={setharmburger} />
+        <>
+          {isAuthenticated ? (
+            <ClientNavlink setharmburger={setharmburger} />
           ) : (
-            <Client setharmburger={setharmburger} />
+            <GuestNavlink setharmburger={setharmburger} />
           )}
-        </ul>
+        </>
       </nav>
     </header>
   );

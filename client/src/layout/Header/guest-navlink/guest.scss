@@ -1,0 +1,15 @@
+.guest-nav {
+  display: flex;
+  justify-content: flex-end;
+  li {
+    list-style: none;
+    margin-left: 1em;
+    a {
+      text-decoration: none;
+      font-size: larger;
+    }
+    &:hover {
+      background-color: blue;
+    }
+  }
+}
