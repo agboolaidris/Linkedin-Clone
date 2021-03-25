@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function Guest({ setharmburger }) {
+function Guest({ setharmburger, harmburger }) {
   return (
-    <ul className="guest-nav">
-      <li className="gue-nav-link" onClick={() => setharmburger(false)}>
+    <ul className={!harmburger ? "guest-nav" : "guest-nav guestNav-mobile"}>
+      <li onClick={() => setharmburger(false)}>
         <Link to="/">Home</Link>
       </li>
-      <li className="gue-nav-link" onClick={() => setharmburger(false)}>
+      <li onClick={() => setharmburger(false)}>
         <Link to="/signup">Join now</Link>
       </li>
-      <li className="gue-nav-link signin-nav-link">
+      <li className="link-border">
         <Link to="/signin" onClick={() => setharmburger(false)}>
           Sign in
         </Link>

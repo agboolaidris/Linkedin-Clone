@@ -14,17 +14,17 @@ function Home() {
         <div className="content">
           <h1>Welcome to your professional community</h1>
 
-          <Link>
+          <Link to="/">
             Find Person You Know
             <FontAwesomeIcon icon={faArrowRight} />
           </Link>
 
-          <Link>
+          <Link to="/">
             Hire professional for your company
             <FontAwesomeIcon icon={faArrowRight} />
           </Link>
 
-          <Link>
+          <Link to="/">
             Join the professional community
             <FontAwesomeIcon icon={faArrowRight} />
           </Link>

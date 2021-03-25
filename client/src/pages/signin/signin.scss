@@ -6,62 +6,13 @@
   height: 90vh;
   padding: $padding;
 
-  form {
+  .div {
     box-shadow: 4px 2px 20px $blue-blue;
     padding: 1.5em;
     min-width: 300px;
     width: 400px;
     max-width: 400px;
     background: $blue-white;
-    .form-content {
-      margin-bottom: 1.3em;
-      h1 {
-        font-size: 25px;
-      }
-      p {
-        font-size: 14px;
-      }
-    }
-
-    a {
-      display: block;
-      font-size: 16px;
-      text-decoration: none;
-      color: $blue;
-      font-weight: bolder;
-      transition: all 0.5s ease-out;
-    }
-    button {
-      background: $blue;
-      width: 100%;
-      border: none;
-      outline: none;
-      margin-top: 1em;
-      padding: 1em;
-      color: $white;
-      font-size: 16px;
-      border-radius: 50px;
-      transition: all 0.5s ease-out;
-    }
-    button:hover {
-      background: $orange;
-    }
-    a:hover {
-      color: $orange;
-    }
-  }
-  .register-link {
-    margin-top: 2em;
-    font-size: 1em;
-    font-weight: bolder;
-    a {
-      text-decoration: none;
-      color: $orange;
-      transition: all 0.5s ease-out;
-    }
-    a:hover {
-      color: $blue-blue;
-    }
   }
 }
 @media only screen and (max-width: 700px) {

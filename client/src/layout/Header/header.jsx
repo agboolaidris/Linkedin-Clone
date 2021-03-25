@@ -34,9 +34,15 @@ function Navbar() {
         </div>
         <>
           {isAuthenticated ? (
-            <ClientNavlink setharmburger={setharmburger} />
+            <ClientNavlink
+              setharmburger={setharmburger}
+              harmburger={harmburger}
+            />
           ) : (
-            <GuestNavlink setharmburger={setharmburger} />
+            <GuestNavlink
+              setharmburger={setharmburger}
+              harmburger={harmburger}
+            />
           )}
         </>
       </nav>
