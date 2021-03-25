@@ -1,5 +1,4 @@
 .signin-form {
-  margin-top: 2em;
   a {
     display: block;
     text-decoration: none;
@@ -26,5 +25,12 @@
     &:hover {
       background-color: $orange;
     }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .signup-form {
+    min-width: 300px;
+    max-width: 100%;
   }
 }

@@ -12,7 +12,7 @@ function Signup({
   prevStep,
 }) {
   return (
-    <div>
+    <div className="signup-form">
       {step === 1 ? (
         <Step1
           handleChange={handleChange}

@@ -21,7 +21,7 @@ function Step1({ handleChange, state, handleStep1Logic }) {
         id="username"
       />
 
-      <button>Join Professionals</button>
+      <button type="submit">Join Professionals</button>
     </form>
   );
 }
