@@ -4,7 +4,7 @@ import InputFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
 
 function sign({ handleChange, state, handleSubmit }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="signin-form">
       <InputFieldGroup
         label="Email"
         placeholder="Email address"

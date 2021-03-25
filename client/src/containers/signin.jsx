@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { login } from "../redux/action/auth";
-import SignComponent from "../components/signin/sign";
+import SignComponent from "../components/signin/signin-component";
 
 function Signin() {
   const [state, setstate] = useState({

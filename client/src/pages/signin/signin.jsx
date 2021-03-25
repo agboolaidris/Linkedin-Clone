@@ -14,7 +14,7 @@ function Signin() {
       ) : (
         <div className="signin">
           <div className="div">
-            <div className="form-content">
+            <div>
               <h1>Sign in</h1>
               <p>Stay updated on your professional world</p>
             </div>

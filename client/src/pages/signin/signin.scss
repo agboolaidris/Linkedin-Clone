@@ -13,11 +13,38 @@
     width: 400px;
     max-width: 400px;
     background: $blue-white;
+    & > div {
+      text-align: center;
+      h1 {
+        color: $blue-blue;
+      }
+      p {
+        font-family: $italic;
+        font-size: 20px;
+        color: $blue;
+      }
+    }
+  }
+  .register-link {
+    margin-top: 2em;
+    color: $blue-blue;
+    font-size: 1.1em;
+    font-weight: bolder;
+    a {
+      margin-left: 0.5em;
+      color: $orange;
+      text-decoration: none;
+      transition: all 0.3s ease-out;
+      &:hover {
+        color: $blue-blue;
+        cursor: pointer;
+      }
+    }
   }
 }
 @media only screen and (max-width: 700px) {
   .signin {
-    form {
+    .div {
       min-width: 300px;
       max-width: 100%;
     }
