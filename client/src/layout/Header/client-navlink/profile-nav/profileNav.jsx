@@ -19,9 +19,13 @@ function ProfileNav({ toggleDropdown, setharmburger }) {
   };
 
   return (
-    <div className={toggleDropdown ? "profile-nav" : "profile-nav"}>
+    <div
+      className={
+        toggleDropdown ? "profile-nav profile-nav-display" : "profile-nav"
+      }
+    >
       <li className="user-info">
-        <img src={user} alt="" />
+        <img src={user} alt="user" width="40px" height="40px" />
         <div>
           <p>Idris I Agboola</p>
           <p>Software Developer</p>

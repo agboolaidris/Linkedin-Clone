@@ -3,18 +3,50 @@
   background-color: $blue-white;
   right: 0;
   top: 12vh;
-  padding: 0em;
+  padding: 0.3em;
   width: 200px;
   margin: 0;
   margin-left: 0;
+  transform: translateY(-300%);
   .user-info {
-    width: 90%;
-    background-color: lawngreen;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
   .profile-link {
     width: 100%;
-    background-color: lemonchiffon;
+    border-radius: 50px;
+    border: 1px solid $blue;
+    margin: 0.8em 0;
+    padding: 0.5em;
+    transition: all 0.3s ease-out;
+    a {
+      color: $blue;
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: $orange;
+      border: none;
+      a {
+        color: $white;
+      }
+    }
   }
+
+  .underline {
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+  }
+  .logout {
+    text-align: center;
+    margin-top: 0.5em;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.profile-nav.profile-nav-display {
+  transform: translateY(0);
 }

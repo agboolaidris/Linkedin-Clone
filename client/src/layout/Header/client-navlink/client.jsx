@@ -8,7 +8,7 @@ import ProfileNav from "./profile-nav/profileNav";
 function Client({ setharmburger }) {
   const [toggleDropdown, settoggleDropdown] = useState(false);
   return (
-    <ul className="client-nav">
+    <ul className={harmburger ? "client-nav" : "client"}>
       <li onClick={() => setharmburger(false)}>
         <Link to="/">
           <FontAwesomeIcon icon={faHome} />
@@ -17,7 +17,12 @@ function Client({ setharmburger }) {
       </li>
 
       {/* display the profile-nav on click */}
-      <li className="dropdown-link">
+      <li
+        className="dropdown-link"
+        onClick={() =>
+          toggleDropdown ? settoggleDropdown(false) : settoggleDropdown(true)
+        }
+      >
         <span>
           <img src={user} />
           <i>
