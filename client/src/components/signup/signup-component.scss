@@ -1,0 +1,18 @@
+.signup-form {
+  background-color: $blue-white;
+  min-width: 300px;
+  width: 400px;
+  padding: 1em;
+  box-shadow: 4px 2px 20px $blue-blue;
+  a {
+    display: block;
+    text-decoration: none;
+    width: max-content;
+    color: $orange;
+    font-weight: bolder;
+    transition: all 0.3s ease-out;
+    &:hover {
+      color: $blue-blue;
+    }
+  }
+}
