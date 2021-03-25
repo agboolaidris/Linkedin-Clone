@@ -1,12 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../../redux/action/auth";
-import Loading from "../../../utilis/loading";
+import { useSelector } from "react-redux";
+import Loading from "../../utilis/loading";
+
 function Signup() {
-  const dispatch = useDispatch();
-  const history = useHistory();
   const isLoading = useSelector((state) => state.Auth.isLoading);
 
   return (

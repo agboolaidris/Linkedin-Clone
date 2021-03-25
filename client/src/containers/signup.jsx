@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import SignupComponent from "../components/signup/signup-component";
 function Signup() {
   const [state, setstate] = useState({
     step: 1,
@@ -34,9 +34,7 @@ function Signup() {
     }
   };
 
-  return (
-   
-  );
+  return <SignupComponent />;
 }
 
 export default Signup;

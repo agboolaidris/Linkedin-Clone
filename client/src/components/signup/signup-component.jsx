@@ -1,6 +1,6 @@
 import React from "react";
 
-function Signup() {
+function Signup({ handleChange, setstate, state, nextstep, handleSubmit }) {
   return (
     <form className="form" onSubmit={handleSubmit}>
       {state.step === 1 ? (
