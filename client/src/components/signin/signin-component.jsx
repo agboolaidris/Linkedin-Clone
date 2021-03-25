@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ButtonGroup from "../commons/buttonGroup/buttonGroup";
 import InputFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
 
 function sign({ handleChange, state, handleSubmit }) {
@@ -29,7 +30,7 @@ function sign({ handleChange, state, handleSubmit }) {
 
       <Link to="/signin">Forget Password?</Link>
 
-      <button>Sign in</button>
+      <ButtonGroup type="submit" name="Sign in" />
     </form>
   );
 }

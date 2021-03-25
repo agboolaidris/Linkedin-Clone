@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonGroup from "../commons/buttonGroup/buttonGroup";
 import TextFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
 
 function Step1({ handleChange, state, handleStep1Logic }) {
@@ -21,7 +22,7 @@ function Step1({ handleChange, state, handleStep1Logic }) {
         id="username"
       />
 
-      <button type="submit">Join Professionals</button>
+      <ButtonGroup type="submit" name="Join Professionals" />
     </form>
   );
 }
