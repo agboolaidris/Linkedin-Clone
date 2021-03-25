@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
+import SignupContainer from "../../containers/signup";
 import Loading from "../../utilis/loading";
 
 function Signup() {
@@ -13,7 +15,7 @@ function Signup() {
       ) : (
         <div className="signup ">
           <h1>Make the most of your professional life</h1>
-
+          <SignupContainer />
           <div className="signin-link">
             Already have an account? <Link to="/signin">Sign In</Link>
           </div>

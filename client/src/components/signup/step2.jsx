@@ -1,17 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import TextFieldGroup from "../../common/testFieldGroup/testFieldGroup";
-function Step2({ setstate, handleChange, nextstep, state }) {
-  const prevstep = () => {
-    setstate({ ...state, step: state.step - 1 });
-  };
+import TextFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
+
+function Step2({ handleChange, state, handleStep2Logic, prevStep }) {
   return (
-    <>
-      <button onClick={prevstep} className="back-btn">
+    <form>
+      <button type="button" onClick={prevStep}>
         <FontAwesomeIcon icon={faArrowLeft} />
         Back
       </button>
+
       <TextFieldGroup
         label="Password"
         type="password"
@@ -21,6 +20,7 @@ function Step2({ setstate, handleChange, nextstep, state }) {
         id="password"
         onChange={handleChange}
       />
+
       <TextFieldGroup
         label="Confirm Password"
         required={true}
@@ -36,8 +36,8 @@ function Step2({ setstate, handleChange, nextstep, state }) {
         Privacy Policy, and Cookie Policy.
       </p>
 
-      <button className="submit-btn">Agree and Join</button>
-    </>
+      <button type="submit">Agree and Join</button>
+    </form>
   );
 }
 

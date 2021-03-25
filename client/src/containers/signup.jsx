@@ -1,19 +1,30 @@
 import React, { useState } from "react";
 import SignupComponent from "../components/signup/signup-component";
+import { step1Validator } from "../helpers/validator/signup-validator";
+
 function Signup() {
   const [state, setstate] = useState({
-    step: 1,
     username: "",
     email: "",
     password: "",
     password2: "",
   });
 
-  const nextstep = () => {
-    setstate({
-      ...state,
-      step: state.step + 1,
-    });
+  const [step, setstep] = useState(1);
+
+  const nextStep = () => {
+    setstep(step + 1);
+  };
+
+  const prevStep = () => {
+    setstep(step - 1);
+  };
+
+  const handleStep1Logic = (e) => {
+    e.preventDefault();
+    if (step1Validator(state.email, state.username)) {
+      nextStep();
+    }
   };
 
   const handleChange = (e) => {
@@ -23,18 +34,20 @@ function Signup() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleStep2Logic = (e) => {
     e.preventDefault();
-    if (state.password.length < 6) {
-      toast.warning("password most be greater than 6 characters");
-    } else if (state.password !== state.password2) {
-      toast.warning("password does not match");
-    } else {
-      dispatch(register(state, history));
-    }
   };
 
-  return <SignupComponent />;
+  return (
+    <SignupComponent
+      handleChange={handleChange}
+      handleStep2Logic={handleStep2Logic}
+      handleStep1Logic={handleStep1Logic}
+      prevStep={prevStep}
+      step={step}
+      state={state}
+    />
+  );
 }
 
 export default Signup;

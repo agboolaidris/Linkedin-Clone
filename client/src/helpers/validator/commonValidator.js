@@ -8,5 +8,5 @@ export const isEmpty = (value) => {
 };
 
 export const isLength = (value, number) => {
-  return !value.isLength < number ? true : false;
+  return value.length < number ? true : false;
 };

@@ -1,10 +1,9 @@
 import React from "react";
-import { toast } from "react-toastify";
-import TextFieldGroup from "../../../common/testFieldGroup/testFieldGroup";
-function Step1({ setstate, handleChange, nextstep, state }) {
-  const handleClick = () => {};
+import TextFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
+
+function Step1({ handleChange, state, handleStep1Logic }) {
   return (
-    <>
+    <form onSubmit={handleStep1Logic}>
       <TextFieldGroup
         label="Email"
         required={true}
@@ -22,10 +21,8 @@ function Step1({ setstate, handleChange, nextstep, state }) {
         id="username"
       />
 
-      <button onClick={handleClick} type="button" className="submit-btn">
-        Join Professionals
-      </button>
-    </>
+      <button>Join Professionals</button>
+    </form>
   );
 }
 
