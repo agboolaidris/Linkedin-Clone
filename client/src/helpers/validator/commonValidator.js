@@ -10,3 +10,7 @@ export const isEmpty = (value) => {
 export const isLength = (value, number) => {
   return value.length < number ? true : false;
 };
+
+export const isMatch = (value, value2) => {
+  return value === value2 ? true : false;
+};

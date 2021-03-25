@@ -5,7 +5,7 @@ import TextFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
 
 function Step2({ handleChange, state, handleStep2Logic, prevStep }) {
   return (
-    <form>
+    <form onSubmit={handleStep2Logic}>
       <button type="button" onClick={prevStep}>
         <FontAwesomeIcon icon={faArrowLeft} />
         Back

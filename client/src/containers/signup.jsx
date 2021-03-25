@@ -1,6 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
+import { register } from "../redux/action/auth";
 import SignupComponent from "../components/signup/signup-component";
-import { step1Validator } from "../helpers/validator/signup-validator";
+import {
+  step1Validator,
+  step2Validator,
+} from "../helpers/validator/signup-validator";
 
 function Signup() {
   const [state, setstate] = useState({
@@ -9,8 +16,10 @@ function Signup() {
     password: "",
     password2: "",
   });
-
   const [step, setstep] = useState(1);
+
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const nextStep = () => {
     setstep(step + 1);
@@ -20,13 +29,6 @@ function Signup() {
     setstep(step - 1);
   };
 
-  const handleStep1Logic = (e) => {
-    e.preventDefault();
-    if (step1Validator(state.email, state.username)) {
-      nextStep();
-    }
-  };
-
   const handleChange = (e) => {
     setstate({
       ...state,
@@ -34,8 +36,19 @@ function Signup() {
     });
   };
 
+  const handleStep1Logic = (e) => {
+    e.preventDefault();
+    if (step1Validator(state.email, state.username)) {
+      nextStep();
+    }
+  };
+
   const handleStep2Logic = (e) => {
     e.preventDefault();
+    if (step2Validator(state.password, state.password2)) {
+      console.log(state);
+      dispatch(register(state, history));
+    }
   };
 
   return (
