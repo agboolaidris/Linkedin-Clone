@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faUpload } from "@fortawesome/free-solid-svg-icons";
-import Imgbox from "../../../commons/img-box/imgbox";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import Imgbox from "../../../commons/imgbox";
 function Avater({ profile }) {
   return (
     <div className="avater">

@@ -1,16 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 //action middleware
 import { logout } from "../../../../redux/action/auth";
 import { clearUserProfile } from "../../../../redux/action/profile";
 
 //import static file
-import user from "../../../../assets/img/user.svg";
-import Imgbox from "../../../../components/commons/img-box/imgbox";
+import Imgbox from "../../../../components/commons/imgbox";
 
 function ProfileNav({ toggleDropdown, setharmburger }) {
   const dispatch = useDispatch();

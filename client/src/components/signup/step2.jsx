@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import TextFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
+import TextFieldGroup from "../commons/inputFieldGroup";
 import ButtonGroup from "../commons/buttonGroup/buttonGroup";
 
 function Step2({ handleChange, state, handleStep2Logic, prevStep }) {

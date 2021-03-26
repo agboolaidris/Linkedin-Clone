@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonGroup from "../commons/buttonGroup/buttonGroup";
-import TextFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
+import TextFieldGroup from "../commons/inputFieldGroup";
 
 function Step1({ handleChange, state, handleStep1Logic }) {
   return (

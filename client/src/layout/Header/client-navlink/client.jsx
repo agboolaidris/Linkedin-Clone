@@ -4,7 +4,7 @@ import { faHome, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import user from "../../../assets/img/user.svg";
 import ProfileNav from "./profile-nav/profileNav";
-import Imgbox from "../../../components/commons/img-box/imgbox";
+import Imgbox from "../../../components/commons/imgbox";
 
 function Client({ setharmburger, harmburger }) {
   const [toggleDropdown, settoggleDropdown] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ButtonGroup from "../commons/buttonGroup/buttonGroup";
-import InputFieldGroup from "../commons/inputFieldGroup/inputFieldGroup";
+import InputFieldGroup from "../commons/inputFieldGroup";
 
 function sign({ handleChange, state, handleSubmit }) {
   return (
