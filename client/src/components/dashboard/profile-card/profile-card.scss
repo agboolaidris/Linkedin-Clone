@@ -12,5 +12,17 @@
   }
   .profile-info {
     min-height: 200px;
+    .img-wrapper {
+      width: 150px;
+      min-width: 100px;
+      height: 150px;
+      position: absolute;
+      background-color: $blue-white;
+      z-index: 20;
+      top: 8em;
+      left: 2em;
+      border-radius: 50%;
+      overflow: hidden;
+    }
   }
 }

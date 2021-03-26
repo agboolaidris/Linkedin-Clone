@@ -6,7 +6,9 @@ function ProfileCard({ profile }) {
     <div className="profile-card">
       <div className="top-background"></div>
       <div className="profile-info">
-        <Avater />
+        <div className="img-wrapper">
+          <Avater />
+        </div>
       </div>
     </div>
   );
