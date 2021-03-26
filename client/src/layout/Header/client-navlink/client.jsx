@@ -4,6 +4,7 @@ import { faHome, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import user from "../../../assets/img/user.svg";
 import ProfileNav from "./profile-nav/profileNav";
+import Imgbox from "../../../components/commons/img-box/imgbox";
 
 function Client({ setharmburger, harmburger }) {
   const [toggleDropdown, settoggleDropdown] = useState(false);
@@ -24,7 +25,7 @@ function Client({ setharmburger, harmburger }) {
         }
       >
         <span>
-          <img src={user} width="30px" height="30px" />
+          <Imgbox height="40px" width="40px" imgSize="25px" />
           <i>
             Me <FontAwesomeIcon icon={faCaretDown} />
           </i>

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 //action middleware
 import { logout } from "../../../../redux/action/auth";
@@ -8,9 +10,12 @@ import { clearUserProfile } from "../../../../redux/action/profile";
 
 //import static file
 import user from "../../../../assets/img/user.svg";
+import Imgbox from "../../../../components/commons/img-box/imgbox";
 
 function ProfileNav({ toggleDropdown, setharmburger }) {
   const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.Auth.user);
 
   const handleLogout = () => {
     setharmburger(false);
@@ -25,7 +30,7 @@ function ProfileNav({ toggleDropdown, setharmburger }) {
       }
     >
       <li className="user-info">
-        <img src={user} alt="user" width="40px" height="40px" />
+        <Imgbox width="50px" height="50px" imgSize="30px" img={user?.avater} />
         <div>
           <p>Idris I Agboola</p>
           <p>Software Developer</p>
