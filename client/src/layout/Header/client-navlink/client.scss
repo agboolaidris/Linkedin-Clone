@@ -44,12 +44,12 @@
 
 @media only screen and (max-width: 700px) {
   .client-nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 70vw;
     height: 100vh;
-    margin-top: 10vh;
+    padding-top: 10vh;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;

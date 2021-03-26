@@ -7,11 +7,11 @@
   position: relative;
   .top-background {
     background-color: $blue-blue;
-    height: 200px;
+    height: 150px;
     width: 100%;
   }
-  .profile-info {
-    min-height: 200px;
+  .profile-img-wrapper {
+    min-height: 100px;
     .img-wrapper {
       width: 150px;
       min-width: 100px;
@@ -19,7 +19,7 @@
       position: absolute;
       background-color: $blue-white;
       z-index: 20;
-      top: 8em;
+      top: 5em;
       left: 2em;
       border-radius: 50%;
       overflow: hidden;
