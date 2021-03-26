@@ -16,7 +16,7 @@ function Client({ setharmburger, harmburger }) {
         </Link>
       </li>
 
-      {/* display the profile-nav on click */}
+      {/* display the profile-nav on click, it only show on desktop screen*/}
       <li
         className="dropdown-link"
         onClick={() =>
@@ -24,7 +24,7 @@ function Client({ setharmburger, harmburger }) {
         }
       >
         <span>
-          <img src={user} />
+          <img src={user} width="30px" height="30px" />
           <i>
             Me <FontAwesomeIcon icon={faCaretDown} />
           </i>
@@ -36,7 +36,8 @@ function Client({ setharmburger, harmburger }) {
         />
       </li>
 
-      <li>
+      {/* replacement of the dropdown on mobile */}
+      <li className="dropdown-replace-mobile">
         <ProfileNav setharmburger={setharmburger} />
       </li>
     </ul>

@@ -17,12 +17,25 @@
       align-items: center;
     }
     &:hover {
-      background-color: $blue-white;
+      a {
+        color: $blue-blue;
+      }
+
+      cursor: pointer;
     }
   }
 
   .dropdown-link {
     position: relative;
+    & > span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .dropdown-replace-mobile {
+    display: none;
   }
 }
 
@@ -33,16 +46,23 @@
     left: 0;
     width: 70vw;
     height: 100vh;
+    margin-top: 10vh;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     background-color: $blue-white;
     transform: translateX(-500%);
     transition: all 0.5s ease-out;
-    li {
-      margin: 1em;
+    & > li {
+      width: 100%;
+      margin: 1em 0;
     }
+    //the dropdown only used for desktop screen only
     .dropdown-link {
       display: none;
+    }
+    .dropdown-replace-mobile {
+      display: block;
     }
   }
   .client-nav.client-nav-mobile {
