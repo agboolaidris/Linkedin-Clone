@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import user from "../../../assets/img/user.svg";
 import ProfileNav from "./profile-nav/profileNav";
 
-function Client({ setharmburger }) {
+function Client({ setharmburger, harmburger }) {
   const [toggleDropdown, settoggleDropdown] = useState(false);
   return (
-    <ul className={harmburger ? "client-nav" : "client"}>
+    <ul className={harmburger ? "client-nav client-nav-mobile " : "client-nav"}>
       <li onClick={() => setharmburger(false)}>
         <Link to="/">
           <FontAwesomeIcon icon={faHome} />
@@ -34,6 +34,10 @@ function Client({ setharmburger }) {
           toggleDropdown={toggleDropdown}
           setharmburger={setharmburger}
         />
+      </li>
+
+      <li>
+        <ProfileNav setharmburger={setharmburger} />
       </li>
     </ul>
   );

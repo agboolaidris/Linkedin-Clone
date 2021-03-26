@@ -50,3 +50,9 @@
 .profile-nav.profile-nav-display {
   transform: translateY(0);
 }
+
+@media only screen and (max-width: 700px) {
+  .profile-nav {
+    transform: translateY(0);
+  }
+}
