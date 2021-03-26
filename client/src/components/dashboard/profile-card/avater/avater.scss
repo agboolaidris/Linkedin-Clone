@@ -1,0 +1,11 @@
+.img-box {
+  width: 200px;
+  min-width: 100px;
+  height: 200px;
+  position: absolute;
+  background-color: $blue-white;
+  z-index: 20;
+  top: 5em;
+  left: 3em;
+  border-radius: 50%;
+}

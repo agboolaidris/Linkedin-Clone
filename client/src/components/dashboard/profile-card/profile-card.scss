@@ -1,0 +1,16 @@
+.profile-card {
+  background-color: $white;
+  border: 2px solid $blue-white;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  .top-background {
+    background-color: $blue-blue;
+    height: 200px;
+    width: 100%;
+  }
+  .profile-info {
+    min-height: 200px;
+  }
+}
