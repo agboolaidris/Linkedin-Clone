@@ -1,7 +1,7 @@
 import React from "react";
-import Avater from "./avater/avater";
+import Avater from "../../../containers/dashboard/profile-card/avater";
 
-function ProfileCard({ profile }) {
+function ProfileCard() {
   return (
     <div className="profile-card">
       <div className="top-background"></div>

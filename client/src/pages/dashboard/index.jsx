@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import ProfileCardContainer from "../../containers/dashboard/profile-card";
 import Loading from "../../utilis/loading";
+import ProfileCard from "./profile-card/profileCard";
+
 function Dashboard() {
   const isLoading = useSelector((state) => state.Profile.isLoading);
 
@@ -12,7 +13,7 @@ function Dashboard() {
       ) : (
         <div className="dashboard">
           <div className="profile">
-            <ProfileCardContainer />
+            <ProfileCard />
           </div>
           <div className="post"></div>
           <div className="users"></div>
