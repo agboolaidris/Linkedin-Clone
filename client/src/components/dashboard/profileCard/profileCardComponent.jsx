@@ -10,7 +10,7 @@ function ProfileCard({ profile }) {
       <div className="top-background"></div>
       <div className="profile-img-wrapper">
         <div className="img-wrapper">
-          <Imgbox />
+          <Imgbox imgSize="70px" />
         </div>
       </div>
       <div className="profile-user-info">
