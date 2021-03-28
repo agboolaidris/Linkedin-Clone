@@ -1,0 +1,70 @@
+.profile-card {
+  background-color: $white;
+  border: 2px solid $blue-white;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  .top-background {
+    background-color: $blue-blue;
+    height: 150px;
+    width: 100%;
+  }
+  .profile-img-wrapper {
+    min-height: 100px;
+    .img-wrapper {
+      width: 150px;
+      min-width: 100px;
+      height: 150px;
+      position: absolute;
+      background-color: $blue-white;
+      z-index: 20;
+      top: 5em;
+      left: 2em;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+
+  .profile-user-info {
+    padding: 0 1em 1em;
+    color: $blue-blue;
+    width: 90%;
+
+    .username {
+      font-size: 30px;
+    }
+    .job {
+      margin: 0.3em 0;
+    }
+
+    .location {
+      margin-top: 0.3em;
+    }
+    .pen {
+      position: absolute;
+      right: 2em;
+      top: 14em;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $blue-blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: $blue;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .profile-user-info {
+    padding: 0 0.5em 0.5em;
+  }
+}

@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Loading from "../../utilis/loading";
-import ProfileCard from "./../../containers/dashboard/profileCard";
 
-function Dashboard() {
+function Profileform() {
   const isLoading = useSelector((state) => state.Profile.isLoading);
 
   return (
@@ -11,16 +10,13 @@ function Dashboard() {
       {isLoading ? (
         <Loading isLoading={isLoading} />
       ) : (
-        <div className="dashboard">
-          <div className="profile">
-            <ProfileCard />
-          </div>
-          <div className="post"></div>
-          <div className="users"></div>
+        <div className="profile-form">
+          <div className="user"></div>
+          <div className="profile"></div>
         </div>
       )}
     </>
   );
 }
 
-export default Dashboard;
+export default Profileform;
