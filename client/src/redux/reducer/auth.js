@@ -3,7 +3,6 @@ import * as type from "../action/type";
 const initialState = {
   isAuthenticated: false,
   isLoading: false,
-  user: {},
 };
 
 const Reducer = (state = initialState, action) => {
@@ -37,7 +36,6 @@ const Reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isAuthenticated: true,
-        user: action.payload,
       };
       break;
 
@@ -47,7 +45,6 @@ const Reducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: false,
         isLoading: false,
-        user: {},
       };
       break;
 
@@ -56,7 +53,6 @@ const Reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isAuthenticated: false,
-        user: {},
       };
       break;
 

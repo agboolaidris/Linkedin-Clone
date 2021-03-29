@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import ProfileUserForm from "../../containers/profileForm/profileUserForm";
-import UserFormContainer from "../../containers/profileForm/userForm";
+import ProfileFormContainer from "../../containers/profileForm";
 import Loading from "../../utilis/loading";
 
 function Profileform() {
@@ -14,8 +13,7 @@ function Profileform() {
       ) : (
         <div className="profile-form-wrapper">
           <div className="profile-form">
-            <UserFormContainer />
-            <ProfileUserForm />
+            <ProfileFormContainer />
           </div>
         </div>
       )}

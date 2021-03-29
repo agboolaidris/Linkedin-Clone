@@ -1,9 +1,11 @@
 import React from "react";
-import ButtonGroup from "../../commons/buttonGroup";
-import TextFieldGroup from "../../commons/inputFieldGroup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import ButtonGroup from "../commons/buttonGroup";
+import TextFieldGroup from "../commons/inputFieldGroup";
 import Avater from "./avater/avater";
 
-function UserForm({ state, handleChange, handleSubmit }) {
+function ProfileForm({ state, handleChange, handleSubmit }) {
   console.log(state);
   return (
     <form className="user-form" onSubmit={handleSubmit}>
@@ -27,6 +29,18 @@ function UserForm({ state, handleChange, handleSubmit }) {
           id="email"
         />
       </div>
+
+      <div className="profile-user-form">
+        <div className="profile-title">
+          Add other Credentails <FontAwesomeIcon icon={faPlus} />
+        </div>
+        <div className="profile-input-wrapper">
+          <TextFieldGroup />
+          <TextFieldGroup />
+          <TextFieldGroup className="full" />
+        </div>
+      </div>
+
       <ButtonGroup
         type="submit"
         name="Save"
@@ -37,4 +51,4 @@ function UserForm({ state, handleChange, handleSubmit }) {
   );
 }
 
-export default UserForm;
+export default ProfileForm;
