@@ -7,7 +7,12 @@ import ButtonGroup from "../commons/buttonGroup";
 function Step2({ handleChange, state, handleStep2Logic, prevStep }) {
   return (
     <form onSubmit={handleStep2Logic}>
-      <ButtonGroup name="Back" type="button" onClick={prevStep}>
+      <ButtonGroup
+        name="Back"
+        type="button"
+        onClick={prevStep}
+        className="back-btn"
+      >
         <FontAwesomeIcon icon={faArrowLeft} />
       </ButtonGroup>
 
@@ -36,7 +41,7 @@ function Step2({ handleChange, state, handleStep2Logic, prevStep }) {
         Privacy Policy, and Cookie Policy.
       </p>
 
-      <ButtonGroup type="submit" name="Agree and Join" />
+      <ButtonGroup type="submit" name="Agree and Join" className="submit-btn" />
     </form>
   );
 }

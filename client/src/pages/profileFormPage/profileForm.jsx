@@ -11,10 +11,12 @@ function Profileform() {
       {isLoading ? (
         <Loading isLoading={isLoading} />
       ) : (
-        <div className="profile-form">
-          <UserFormContainer />
+        <div className="profile-form-wrapper">
+          <div className="profile-form">
+            <UserFormContainer />
 
-          <div className="profile-user-form"></div>
+            <div className="profile-user-form"></div>
+          </div>
         </div>
       )}
     </>

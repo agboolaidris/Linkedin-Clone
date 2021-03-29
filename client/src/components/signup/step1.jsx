@@ -22,7 +22,11 @@ function Step1({ handleChange, state, handleStep1Logic }) {
         id="username"
       />
 
-      <ButtonGroup type="submit" name="Join Professionals" />
+      <ButtonGroup
+        type="submit"
+        name="Join Professionals"
+        className="submit-btn"
+      />
     </form>
   );
 }

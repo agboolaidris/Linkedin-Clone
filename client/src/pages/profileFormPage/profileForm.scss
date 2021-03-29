@@ -1,14 +1,20 @@
-.profile-form {
-  width: 70%;
-  min-height: 70%;
-  border: 1px solid $blue-white;
-  border-radius: 20px;
-  margin: 2em auto;
-  overflow: hidden;
+.profile-form-wrapper {
+  .profile-form {
+    width: 70%;
+    min-height: 70%;
+    border: 1px solid $blue-white;
+    border-radius: 20px;
+    margin: 2em auto;
+    overflow: hidden;
+  }
+
+  padding: $padding;
 }
 
 @media only screen and (max-width: 700px) {
-  .profile-form {
-    width: 100%;
+  .profile-form-wrapper {
+    .profile-form {
+      width: 100%;
+    }
   }
 }

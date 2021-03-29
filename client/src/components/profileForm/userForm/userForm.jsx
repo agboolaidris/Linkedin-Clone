@@ -16,7 +16,12 @@ function UserForm() {
         <TextFieldGroup label="username" />
         <TextFieldGroup label="Email" />
       </div>
-      <ButtonGroup type="submit" name="Save" width="200px" />
+      <ButtonGroup
+        type="submit"
+        name="Save"
+        width="200px"
+        className="user-form-btn"
+      />
     </form>
   );
 }

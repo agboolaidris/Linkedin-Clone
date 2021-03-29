@@ -30,7 +30,7 @@ function sign({ handleChange, state, handleSubmit }) {
 
       <Link to="/signin">Forget Password?</Link>
 
-      <ButtonGroup type="submit" name="Sign in" />
+      <ButtonGroup type="submit" name="Sign in" className="submit-btn" />
     </form>
   );
 }

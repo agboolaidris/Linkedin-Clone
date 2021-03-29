@@ -1,0 +1,28 @@
+.submit-btn {
+  margin-top: 1em;
+  display: block;
+  width: 100%;
+  padding: 0.8em;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 1.3em;
+  background-color: $blue-blue;
+  color: $white;
+  transition: all 0.3s ease-out;
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+.back-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1em;
+  color: $blue-blue;
+  &:hover {
+    cursor: pointer;
+    color: $orange;
+  }
+}

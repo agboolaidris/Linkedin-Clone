@@ -10,22 +10,6 @@
       color: $blue-blue;
     }
   }
-  button {
-    margin-top: 1em;
-    display: block;
-    width: 100%;
-    padding: 0.8em;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    font-size: 1.3em;
-    background-color: $blue-blue;
-    color: $white;
-    transition: all 0.3s ease-out;
-    &:hover {
-      background-color: $orange;
-    }
-  }
 }
 
 @media only screen and (max-width: 700px) {
