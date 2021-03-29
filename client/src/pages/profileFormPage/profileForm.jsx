@@ -10,8 +10,8 @@ function Profileform() {
       {isLoading ? (
         <Loading isLoading={isLoading} />
       ) : (
-        <div className="profile-form">
-          <div className="user">jjjjjjjjj</div>
+        <div className="profile-form-wrapper">
+          <div className="user-form">jjjjjjjjj</div>
           <div className="profile"></div>
         </div>
       )}
