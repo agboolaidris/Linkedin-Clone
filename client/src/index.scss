@@ -26,8 +26,9 @@
 
 //dashboard
 @import "./pages/dashboard/dashboard.scss";
-@import "./components/dashboard/avater/avater.scss";
 @import "./components/dashboard/profileCard/profilecard.scss";
 
 //setup Profile
 @import "./pages/profileFormPage/profileForm.scss";
+@import "./components/profileForm/userForm/userForm.scss";
+@import "./components/profileForm/userForm/avater/avater.scss";

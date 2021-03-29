@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 function Imgbox({ className, width, height, img, imgSize }) {
+  
   const imgBox = {
     width: width ? width : "100%",
     height: height ? height : "100%",
