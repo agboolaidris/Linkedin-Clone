@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonGroup from "../commons/buttonGroup/buttonGroup";
+import ButtonGroup from "../commons/buttonGroup";
 import TextFieldGroup from "../commons/inputFieldGroup";
 
 function Step1({ handleChange, state, handleStep1Logic }) {

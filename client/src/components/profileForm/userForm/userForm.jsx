@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonGroup from "../../commons/buttonGroup/buttonGroup";
+import ButtonGroup from "../../commons/buttonGroup";
 import TextFieldGroup from "../../commons/inputFieldGroup";
 import Avater from "./avater/avater";
 
@@ -16,7 +16,7 @@ function UserForm() {
         <TextFieldGroup label="username" />
         <TextFieldGroup label="Email" />
       </div>
-      <ButtonGroup type="submit" name="Save" width="50px" />
+      <ButtonGroup type="submit" name="Save" width="200px" />
     </form>
   );
 }
