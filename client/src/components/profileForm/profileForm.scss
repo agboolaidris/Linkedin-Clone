@@ -20,6 +20,8 @@
 
   .user-input-wrapper {
     padding: 0 2em;
+    height: 300px;
+    overflow-y: auto;
 
     .grid {
       display: grid;
