@@ -31,7 +31,7 @@ Route.post("/login", [validateLogin], login);
 //@access PRIVATE route
 Route.get("/persistence", [Auth], persistenceLogin);
 
-//@route  GET api/auth/user
+//@route  POST api/auth/logout
 //@desc   logout user account
 //@access PRIVATE route
 Route.post("/logout", [Auth], logout);

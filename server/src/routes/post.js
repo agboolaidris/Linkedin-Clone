@@ -15,7 +15,7 @@ const { validatePost } = require("../validator/post");
 //@route  POST api/post
 //@desc   create a post
 //@access PRIVATE route
-Route.post("/", [Auth, multer("avater"), validatePost], createPost);
+Route.post("/", [Auth, multer("pictures"), validatePost], createPost);
 
 //@route  GET api/post
 //@desc   fetch all post

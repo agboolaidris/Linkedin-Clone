@@ -119,4 +119,10 @@ const schema = new Schema(
   { timestamps: true }
 );
 
+schema.methods.toJSON = function () {
+  const user = this.toObject();
+  delete user.password;
+  return user;
+};
+
 module.exports = User = model("User", schema);

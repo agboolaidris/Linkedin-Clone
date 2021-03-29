@@ -1,5 +1,3 @@
-//load profile module
-const Profile = require("../models/profile");
 //load user module
 const User = require("../models/user");
 
@@ -8,48 +6,37 @@ const User = require("../models/user");
 //@access PRIVATE route
 exports.createProfile = async (req, res) => {
   try {
-    const profileField = {};
+    const user = await User.findById(req.userID);
 
-    profileField.user = req.userID;
-    if (req.body.handle) profileField.handle = req.body.handle;
-    if (req.body.company) profileField.company = req.body.company;
-    if (req.body.website) profileField.website = req.body.website;
-    if (req.body.status) profileField.status = req.body.status;
-    if (req.body.bio) profileField.bio = req.body.bio;
-    if (req.body.github) profileField.github = req.body.github;
-
-    //skills-split into array
-    if (req.body.skills) profileField.skills = req.body.skills.split(",");
-
-    //social media
-    profileField.social = {};
-    if (req.body.twitter) profileField.social.twitter = req.body.twitter;
-    if (req.body.facebook) profileField.social.facebook = req.body.facebook;
-    if (req.body.linkedin) profileField.social.linkedin = req.body.linkedin;
-    if (req.body.instagram) profileField.social.instagram = req.body.instagram;
-
-    //check if the have a profile
-    const profile = await Profile.findOne({ user: req.userID });
-
-    //if user profile exist, update the user profile and stop execute
-    if (profile) {
-      const response = await Profile.findOneAndUpdate(
-        { user: req.userID },
-        profileField,
-        { new: true }
-      );
-      return res.json(response); //stop execute
-    }
+    if (!user) return res.status(404).json({ msg: "user not found" });
 
     //if no profile for user, create a profile
-    const handle = await Profile.findOne({ handle: req.body.handle }); //check if there is a user with the handle
+    const handle = await User.findOne({ handle: req.body.handle }); //check if there is a user with the handle
 
     if (handle)
       return res.status(400).json({ msg: "the handle already exist" });
 
-    const save = new Profile(profileField); // save profile
-    const response = await save.save();
-    res.json(response);
+    if (req.file) user.avater = req.file.pathname;
+
+    if (req.body.handle) user.handle = req.body.handle;
+    if (req.body.company) user.company = req.body.company;
+    if (req.body.website) user.website = req.body.website;
+    if (req.body.status) user.status = req.body.status;
+    if (req.body.bio) user.bio = req.body.bio;
+    if (req.body.github) user.github = req.body.github;
+
+    //skills-split into array
+    if (req.body.skills) user.skills = req.body.skills.split(",");
+
+    //social media
+    user.social = {};
+    if (req.body.twitter) user.social.twitter = req.body.twitter;
+    if (req.body.facebook) user.social.facebook = req.body.facebook;
+    if (req.body.linkedin) user.social.linkedin = req.body.linkedin;
+    if (req.body.instagram) user.social.instagram = req.body.instagram;
+
+    const profile = await user.save();
+    res.json(profile);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -60,15 +47,12 @@ exports.createProfile = async (req, res) => {
 //@access public route
 exports.fetchProfile = async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.userID }).populate(
-      "user",
-      ["name", "avater"]
-    );
+    const user = await User.findOne({ _id: req.userID });
 
-    if (!profile)
+    if (!user)
       return res.status(404).json({ msg: "There is no profile for this user" });
 
-    res.json(profile);
+    res.json(user);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -79,11 +63,11 @@ exports.fetchProfile = async (req, res) => {
 //@access PUBLIC route
 exports.fetchProfiles = async (req, res) => {
   try {
-    const profile = await Profile.find({}).populate("user", ["name"]);
+    const users = await Profile.find({});
 
-    if (!profile) return res.status(404).json({ msg: "There is no profile " });
+    if (!users) return res.status(404).json({ msg: "There is no users" });
 
-    res.json(profile);
+    res.json(users);
   } catch (error) {
     res.status(400).json({ msg: error.message });
   }
@@ -94,9 +78,9 @@ exports.fetchProfiles = async (req, res) => {
 //@access PUBLIC route
 exports.profileByHandle = async (req, res) => {
   try {
-    const profile = await Profile.findOne({
+    const profile = await User.findOne({
       handle: req.params.handle,
-    }).populate("user", ["name"]);
+    });
 
     if (!profile)
       return res
@@ -134,8 +118,8 @@ exports.profileByUserID = async (req, res) => {
 //@access PRIVATE route
 exports.addExperience = async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.userID });
-    if (!profile) return res.status(404).json({ msg: "profile not found" });
+    const profile = await User.findOne({ user: req.userID });
+    if (!profile) return res.status(404).json({ msg: "user not found" });
 
     const experience = {
       title: req.body.title,
@@ -160,7 +144,7 @@ exports.addExperience = async (req, res) => {
 //@access PRIVATE route
 exports.addEducation = async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.userID });
+    const profile = await User.findOne({ _id: req.userID });
     if (!profile)
       return res.status(404).json({ msg: "Profile of this user not found" });
 
@@ -186,7 +170,7 @@ exports.addEducation = async (req, res) => {
 //@access PRIVATE route
 exports.deleteEducation = async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.userID });
+    const profile = await User.findOne({ _id: req.userID });
 
     if (!profile)
       return res.status(404).json({ msg: "Profile of this user not found" });
@@ -213,7 +197,7 @@ exports.deleteEducation = async (req, res) => {
 //@access PRIVATE route
 exports.deleteExperience = async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.userID });
+    const profile = await User.findOne({ user: req.userID });
 
     if (!profile)
       return res.status(404).json({ msg: "Profile of this user not found" });
@@ -227,7 +211,7 @@ exports.deleteExperience = async (req, res) => {
     profile.experiences = profile.experiences.filter(
       (e) => e._id != req.params.exp_id
     );
-
+    
     const response = await profile.save();
     res.json(response);
   } catch (error) {

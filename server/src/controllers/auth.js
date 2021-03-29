@@ -21,8 +21,8 @@ exports.register = async (req, res) => {
       username: req.body.username,
     });
 
-    const response = await data.save();
-    res.json(response);
+    await data.save();
+    res.json({ msg: "user register successful" });
   } catch (error) {
     res.status(400).json({ msg: error.message });
   }
@@ -45,18 +45,23 @@ exports.login = async (req, res) => {
 
     const token = await sign(user._id);
     if (!token) throw new Error("jwt error");
-    res.cookie("access-token", token, { httpOnly: true }).json(user);
+
+    res
+      .cookie("access-token", token, { httpOnly: true })
+      .json("login successful");
   } catch (error) {
     res.status(400).json({ msg: error.message });
   }
 };
 
+//@route delete api/auth/user
+//@desc  persistence Login
+//@access PRIVATE route
 exports.deleteAccount = async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.userID);
     if (!user)
       return res.status(404).json({ msg: "no such account in the database" });
-    await Profile.findOneAndDelete({ user: req.userID });
     res.json({ msg: "account deleted" });
   } catch (error) {
     res.status(404).json({ msg: error.message });
@@ -66,19 +71,18 @@ exports.deleteAccount = async (req, res) => {
 //@route GET api/auth/persistence
 //@desc  persistence Login
 //@access PRIVATE route
-
 exports.persistenceLogin = async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.userID });
-    if (!user) return res.status(404).json({ msg: "user doesn't exist " });
 
-    res.json(user);
+    if (!user) return res.status(404).json({ msg: "user doesn't exist " });
+    res.json("login successful");
   } catch (error) {
     res.json(500).json({ msg: error.message });
   }
 };
 
-//@route  POST api/auth/persistence
+//@route  POST api/auth/logout
 //@desc   Logout user
 //@access PRIVATE route
 exports.logout = async (req, res) => {

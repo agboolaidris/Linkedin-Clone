@@ -1,7 +1,7 @@
 //load Post module
 const Post = require("../models/post");
-//load profile module
-const Profile = require("../models/profile");
+//load user profile module
+const User = require("../models/user");
 
 //@route POST api/post
 //@desc   create a post
@@ -14,7 +14,7 @@ exports.createPost = async (req, res) => {
         .json({ msg: "image must be in .jpeg, .jpg, or .png format " });
     const post = new Post({
       text: req.body.text,
-      avater: req.file.path,
+      pictures: req.file.path,
       user: req.userID,
     });
     const data = await post.save();

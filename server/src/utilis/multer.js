@@ -1,14 +1,17 @@
 const multer = require("multer");
 const shortid = require("shortid");
+
 exports.multer = (name, type) => {
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, "images");
     },
+
     filename: (req, file, cb) => {
       cb(null, `${shortid.generate()}-${file.originalname}`);
     },
   });
+
   const upload = multer({
     storage,
     fileFilter: (req, file, cb) => {

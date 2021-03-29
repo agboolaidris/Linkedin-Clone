@@ -1,5 +1,6 @@
 const Route = require("express").Router();
 const Auth = require("../middleware/auth");
+const { multer } = require("../utilis/multer");
 const {
   createProfile,
   fetchProfile,
@@ -11,6 +12,7 @@ const {
   deleteEducation,
   deleteExperience,
 } = require("../controllers/profile");
+
 const {
   validateProfile,
   validateExperience,
@@ -25,7 +27,7 @@ Route.get("/", [Auth], fetchProfile);
 //@route  POST api/profile
 //@desc   create/update user profile
 //@access PRIVATE route
-Route.post("/", [Auth, validateProfile], createProfile);
+Route.post("/", [Auth, multer("avater"), validateProfile], createProfile);
 
 //@route  GET api/profile/users
 //@desc   get profile of all users
