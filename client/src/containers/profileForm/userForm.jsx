@@ -1,8 +1,8 @@
 import React from "react";
-import AvaterComponent from "../../../components/dashboard/profile-card/avater/avater";
+import UserFormComponent from "../../components/profileForm/userForm/userForm";
 
-function Avater() {
-  return <AvaterComponent />;
+function UserForm() {
+  return <UserFormComponent />;
 }
 
-export default Avater;
+export default UserForm;
