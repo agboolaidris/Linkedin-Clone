@@ -38,7 +38,7 @@ Route.get("/all", fetchProfiles);
 Route.get("/handle/:handle", profileByHandle);
 
 //@route  GET api/profile/user/:id
-//@desc   get profile by handle
+//@desc   get profile by userID
 //@access PUBLIC route
 Route.get("/user/:id", profileByUserID);
 

@@ -1,6 +1,6 @@
 const { Error } = require("mongoose");
 const User = require("../models/user");
-const Proofile = require("../models/profile");
+
 const { compare, hash } = require("../utilis/bcrypt");
 const { sign } = require("../utilis/jwt");
 
