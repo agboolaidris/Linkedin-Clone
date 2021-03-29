@@ -46,7 +46,6 @@ function Signup() {
   const handleStep2Logic = (e) => {
     e.preventDefault();
     if (step2Validator(state.password, state.password2)) {
-      console.log(state);
       dispatch(register(state, history));
     }
   };

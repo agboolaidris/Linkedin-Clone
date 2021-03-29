@@ -21,7 +21,7 @@ function ProfileNav({ toggleDropdown, setharmburger }) {
   };
 
   return (
-    <div
+    <ul
       className={
         toggleDropdown ? "profile-nav profile-nav-display" : "profile-nav"
       }
@@ -41,7 +41,7 @@ function ProfileNav({ toggleDropdown, setharmburger }) {
       <li className="logout" onClick={handleLogout}>
         Sign out
       </li>
-    </div>
+    </ul>
   );
 }
 

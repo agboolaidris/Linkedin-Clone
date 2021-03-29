@@ -10,14 +10,19 @@ exports.createProfile = async (req, res) => {
 
     if (!user) return res.status(404).json({ msg: "user not found" });
 
-    //if no profile for user, create a profile
-    const handle = await User.findOne({ handle: req.body.handle }); //check if there is a user with the handle
+    const checkUserHandle = await User.findOne({
+      handle: req.body.handle,
+      _id: req.userID,
+    });
+    const checkAllHandle = await User.findOne({
+      handle: req.body.handle,
+    });
 
-    if (handle)
+    if (!checkUserHandle && checkAllHandle)
       return res.status(400).json({ msg: "the handle already exist" });
 
-    if (req.file) user.avater = req.file.pathname;
-
+    if (req.file) user.avater = req.file.path;
+    console.log(req.file);
     if (req.body.handle) user.handle = req.body.handle;
     if (req.body.company) user.company = req.body.company;
     if (req.body.website) user.website = req.body.website;
@@ -118,7 +123,7 @@ exports.profileByUserID = async (req, res) => {
 //@access PRIVATE route
 exports.addExperience = async (req, res) => {
   try {
-    const profile = await User.findOne({ user: req.userID });
+    const profile = await User.findOne({ _id: req.userID });
     if (!profile) return res.status(404).json({ msg: "user not found" });
 
     const experience = {
@@ -211,7 +216,7 @@ exports.deleteExperience = async (req, res) => {
     profile.experiences = profile.experiences.filter(
       (e) => e._id != req.params.exp_id
     );
-    
+
     const response = await profile.save();
     res.json(response);
   } catch (error) {
