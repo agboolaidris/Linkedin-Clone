@@ -26,3 +26,19 @@
     color: $orange;
   }
 }
+
+.save-btn {
+  float: right;
+  margin: 0.3em 2em 1em;
+  padding: 0.6em 1.5em;
+  border-radius: 20px;
+  background-color: $blue-blue;
+  color: $white;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  transition: all.3 ease-out;
+  &:hover {
+    background-color: $blue;
+  }
+}

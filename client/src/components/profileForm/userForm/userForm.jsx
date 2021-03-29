@@ -20,7 +20,7 @@ function UserForm() {
         type="submit"
         name="Save"
         width="200px"
-        className="user-form-btn"
+        className="save-btn"
       />
     </form>
   );
