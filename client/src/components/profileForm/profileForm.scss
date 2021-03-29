@@ -20,16 +20,25 @@
 
   .user-input-wrapper {
     padding: 0 2em;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1em;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1em;
+    }
+    .profile-title {
+      margin-top: 1.5em;
+      color: $blue-blue;
+    }
   }
 }
 
 @media only screen and (max-width: 700px) {
   .user-form {
     .user-input-wrapper {
-      grid-template-columns: 100%;
+      .grid {
+        grid-template-columns: 100%;
+      }
     }
   }
 }
