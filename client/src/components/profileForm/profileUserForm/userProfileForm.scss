@@ -1,0 +1,16 @@
+.profile-user-form {
+  margin-top: 4em;
+  padding: 1em;
+  .profile-title {
+    width: 100%;
+  }
+  .profile-input-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+    .full {
+      grid-column: 1/4;
+      width: 99%;
+    }
+  }
+}
