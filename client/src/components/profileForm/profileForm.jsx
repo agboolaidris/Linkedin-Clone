@@ -20,7 +20,7 @@ function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
         <div className="background"></div>
         <div className="img-wrapper">
           <div className="imgbox">
-            <Avater value={state.avater} handleChange={handleChange} />
+            <Avater value={state.avater} onChange={handleChange} />
           </div>
         </div>
         <div className="input-wrapper">
@@ -53,6 +53,7 @@ function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
               onChange={handleChange}
               value={state.status}
               option={listOption}
+              id="status"
             />
           </div>
           <TextAreaGroup
@@ -76,6 +77,55 @@ function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
               label="website"
               id="website"
               placeholder="enter website Url"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid">
+            <TextFieldGroup
+              label="Skills"
+              value={state.skills}
+              placeholder="Enter your skills"
+              id="skills"
+              onChange={handleChange}
+            />
+            <TextFieldGroup
+              label="Github Url"
+              id="github"
+              placeholder="enter github Url link"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid">
+            <TextFieldGroup
+              label="facebook Url"
+              value={state.facebook}
+              placeholder="Enter facebook Url link"
+              id="facebook"
+              onChange={handleChange}
+            />
+            <TextFieldGroup
+              label="twiter Url"
+              id="twiter"
+              value={state.twiter}
+              placeholder="enter twiter Url link"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="grid">
+            <TextFieldGroup
+              label="Instagram Url"
+              value={state.instagram}
+              placeholder="Enter instagram Url link"
+              id="instagram"
+              onChange={handleChange}
+            />
+            <TextFieldGroup
+              label="linkedin Url"
+              id="linkedin"
+              value={state.linkedin}
+              placeholder="enter linkedin Url link"
               onChange={handleChange}
             />
           </div>

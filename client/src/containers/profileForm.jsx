@@ -35,6 +35,10 @@ function ProfileUserForm() {
     skills: "",
     bio: "",
     github: "",
+    twiter: "",
+    facebook: "",
+    instagram: "",
+    linkedin: "",
   });
 
   useEffect(() => {
@@ -47,9 +51,13 @@ function ProfileUserForm() {
       company: profile?.company,
       website: profile?.website,
       status: profile?.status,
-      skills: profile?.skills,
+      skills: profile?.skills.join(),
       bio: profile?.bio,
       github: profile?.github,
+      twiter: profile.social?.twiter,
+      facebook: profile.social?.facebook,
+      instagram: profile.social?.instagram,
+      linkedin: profile.social?.linkedin,
     });
   }, [profile]);
 
