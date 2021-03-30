@@ -18,19 +18,19 @@ function ProfileForm({ state, handleChange, handleSubmit }) {
         <div className="background"></div>
         <div className="img-wrapper">
           <div className="imgbox">
-            <Avater value={state?.avater} handleChange={handleChange} />
+            <Avater value={state.avater} handleChange={handleChange} />
           </div>
         </div>
         <div className="input-wrapper">
           <div className="grid">
             <TextFieldGroup
               label="username"
-              value={state?.username}
+              value={state.username}
               onChange={handleChange}
             />
             <TextFieldGroup
               label="Email"
-              value={state?.email}
+              value={state.email}
               onChange={handleChange}
             />
           </div>

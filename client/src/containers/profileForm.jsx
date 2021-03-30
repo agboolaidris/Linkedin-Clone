@@ -44,6 +44,13 @@ function ProfileUserForm() {
     e.preventDefault();
     console.log(state);
   };
-  return <ProfileFormComponent />;
+
+  return (
+    <ProfileFormComponent
+      state={state}
+      handleSubmit={handleSubmit}
+      handleChange={handleChange}
+    />
+  );
 }
 export default ProfileUserForm;
