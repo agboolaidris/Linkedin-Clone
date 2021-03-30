@@ -58,7 +58,7 @@ function SelectListGroup({
 SelectListGroup.propTypes = {
   option: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   required: PropTypes.bool,
 };
 

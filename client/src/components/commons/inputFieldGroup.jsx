@@ -57,7 +57,7 @@ TextFieldGroup.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   autoComplete: PropTypes.bool,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   required: PropTypes.bool,
 };
 

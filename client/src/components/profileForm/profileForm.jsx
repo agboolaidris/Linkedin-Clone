@@ -60,6 +60,8 @@ function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
             id="bio"
             placeholder="summary about your profession"
             height="100px"
+            onChange={handleChange}
+            value={state.value}
           />
 
           <div className="grid">

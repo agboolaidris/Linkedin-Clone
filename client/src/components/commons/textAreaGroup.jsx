@@ -54,7 +54,6 @@ TextAreaGroup.propTypes = {
   id: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
   required: PropTypes.bool,
 };
 
