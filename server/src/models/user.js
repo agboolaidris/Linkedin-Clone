@@ -102,7 +102,7 @@ const schema = new Schema(
       },
     ],
     social: {
-      twitter: {
+      twiter: {
         type: String,
       },
       linkedin: {

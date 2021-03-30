@@ -17,6 +17,7 @@ export const postUserProfile = (profile, history) => {
   return async (dispatch) => {
     dispatch({ type: type.PROFILE_LOADING });
     try {
+      console.log(profile);
       const data = await api.postUserProfile(profile);
       console.log(data);
       dispatch({ type: type.POST_USER_PROFILE, payload: data.data });

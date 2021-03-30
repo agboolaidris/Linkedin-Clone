@@ -7,7 +7,7 @@ const User = require("../models/user");
 exports.createProfile = async (req, res) => {
   try {
     const user = await User.findById(req.userID);
-
+    console.log(req.body);
     if (!user) return res.status(404).json({ msg: "user not found" });
 
     const checkUserHandle = await User.findOne({
@@ -35,7 +35,7 @@ exports.createProfile = async (req, res) => {
 
     //social media
     user.social = {};
-    if (req.body.twitter) user.social.twitter = req.body.twitter;
+    if (req.body.twiter) user.social.twiter = req.body.twiter;
     if (req.body.facebook) user.social.facebook = req.body.facebook;
     if (req.body.linkedin) user.social.linkedin = req.body.linkedin;
     if (req.body.instagram) user.social.instagram = req.body.instagram;
