@@ -5,8 +5,10 @@ import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import ButtonGroup from "../commons/buttonGroup";
 import TextFieldGroup from "../commons/inputFieldGroup";
 import Avater from "./avater/avater";
+import TextAreaGroup from "../commons/textAreaGroup";
+import SelectListGroup from "../commons/selectListGroup";
 
-function ProfileForm({ state, handleChange, handleSubmit }) {
+function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
   return (
     <form className="user-form" onSubmit={handleSubmit}>
       <div className="back-link">
@@ -38,11 +40,43 @@ function ProfileForm({ state, handleChange, handleSubmit }) {
           <div className="profile-title">
             Add other Credentails <FontAwesomeIcon icon={faPlus} />
           </div>
+
           <div className="grid">
-            <TextFieldGroup />
-            <TextFieldGroup />
+            <TextFieldGroup
+              label="handle"
+              value={state.handle}
+              placeholder="handle most be unique"
+              id="handle"
+              onChange={handleChange}
+            />
+            <SelectListGroup
+              onChange={handleChange}
+              value={state.status}
+              option={listOption}
+            />
           </div>
-          <TextFieldGroup />
+          <TextAreaGroup
+            label="bio"
+            id="bio"
+            placeholder="summary about your profession"
+            height="100px"
+          />
+
+          <div className="grid">
+            <TextFieldGroup
+              label="Company"
+              value={state.company}
+              placeholder="enter your comapny name"
+              id="company"
+              onChange={handleChange}
+            />
+            <TextFieldGroup
+              label="website"
+              id="website"
+              placeholder="enter website Url"
+              onChange={handleChange}
+            />
+          </div>
         </div>
       </div>
 

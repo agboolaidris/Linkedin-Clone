@@ -9,6 +9,7 @@ function TextAreaGroup({
   label,
   className,
   width,
+  height,
 }) {
   const div = {
     margin: "0.6em auto",
@@ -16,6 +17,7 @@ function TextAreaGroup({
     border: "1px solid hsl(213, 47%, 47%)",
     borderRadius: "5px",
     padding: "0.2em",
+    height: height ? height : "100%",
   };
 
   const input = {

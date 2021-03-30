@@ -54,7 +54,6 @@ function TextFieldGroup({
 
 TextFieldGroup.propTypes = {
   type: PropTypes.string,
-  id: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   autoComplete: PropTypes.bool,

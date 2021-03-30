@@ -4,6 +4,26 @@ import { useSelector, useDispatch } from "react-redux";
 
 function ProfileUserForm() {
   const profile = useSelector((state) => state.Profile.profile);
+
+  //select option for status selectListGroup
+  const listOption = [
+    {
+      label: "--select option--",
+    },
+    {
+      value: "currently working",
+      label: "currently working",
+    },
+    {
+      value: "looking for job",
+      label: "looking for job",
+    },
+    {
+      value: "self-employed",
+      label: "self-employed",
+    },
+  ];
+
   const [state, setstate] = useState({
     username: "",
     email: "",
@@ -50,6 +70,7 @@ function ProfileUserForm() {
       state={state}
       handleSubmit={handleSubmit}
       handleChange={handleChange}
+      listOption={listOption}
     />
   );
 }

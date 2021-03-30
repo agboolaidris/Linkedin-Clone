@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-function TextAreaGroup({
+function SelectListGroup({
   required,
   value,
   onChange,
@@ -43,7 +43,7 @@ function TextAreaGroup({
         value={value}
         id={id}
       >
-        {option.map((opt) => {
+        {option?.map((opt) => {
           return (
             <option key={opt.label} value={opt.value}>
               {opt.label}
@@ -55,12 +55,11 @@ function TextAreaGroup({
   );
 }
 
-TextAreaGroup.propTypes = {
-  id: PropTypes.string.isRequired,
+SelectListGroup.propTypes = {
   option: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   required: PropTypes.bool,
 };
 
-export default TextAreaGroup;
+export default SelectListGroup;

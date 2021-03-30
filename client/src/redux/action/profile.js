@@ -6,6 +6,7 @@ export const getUserProfile = () => {
     dispatch({ type: type.PROFILE_LOADING });
     try {
       const data = await api.getUserProfile();
+      console.log(data);
       dispatch({ type: type.GET_USER_PROFILE, payload: data.data });
     } catch (error) {
       dispatch({ type: type.GET_USER_PROFILE, payload: {} });
