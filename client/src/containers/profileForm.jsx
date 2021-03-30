@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import ProfileFormComponent from "../components/profileForm/profileForm";
 import { useSelector, useDispatch } from "react-redux";
+
+import ProfileFormComponent from "../components/profileForm/profileForm";
+import { postUserProfile } from "../redux/action/profile";
 
 function ProfileUserForm() {
   const profile = useSelector((state) => state.Profile.profile);
-
+  const dispatch = useDispatch();
   //select option for status selectListGroup
   const listOption = [
     {
@@ -70,7 +72,7 @@ function ProfileUserForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+    dispatch(postUserProfile(state));
   };
 
   return (

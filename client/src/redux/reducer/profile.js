@@ -1,4 +1,6 @@
+import { toast } from "react-toastify";
 import * as type from "../action/type";
+
 const initalState = {
   profile: null,
   profiles: null,
@@ -19,6 +21,20 @@ const Reducer = (state = initalState, action) => {
         ...state,
         isLoading: false,
         profile: action.payload,
+      };
+      break;
+    case type.POST_USER_PROFILE:
+      return {
+        ...state,
+        isLoading: false,
+        profile: action.payload,
+      };
+      break;
+    case type.PROFILE_ERROR:
+      toast.warning(action.payload?.msg);
+      return {
+        ...state,
+        isLoading: false,
       };
       break;
 

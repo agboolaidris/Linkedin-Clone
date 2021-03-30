@@ -62,7 +62,7 @@ function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
             placeholder="summary about your profession"
             height="100px"
             onChange={handleChange}
-            value={state.value}
+            value={state.bio}
           />
 
           <div className="grid">
@@ -77,6 +77,7 @@ function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
               label="website"
               id="website"
               placeholder="enter website Url"
+              value={state.website}
               onChange={handleChange}
             />
           </div>
@@ -92,6 +93,7 @@ function ProfileForm({ state, handleChange, handleSubmit, listOption }) {
             <TextFieldGroup
               label="Github Url"
               id="github"
+              value={state.github}
               placeholder="enter github Url link"
               onChange={handleChange}
             />
