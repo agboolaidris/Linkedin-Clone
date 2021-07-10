@@ -67,6 +67,7 @@ function ProfileUserForm() {
     setstate({
       ...state,
       [e.target.id]: e.target.value,
+      avater: e.target.files[0],
     });
   };
 

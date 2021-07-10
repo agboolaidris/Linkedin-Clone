@@ -16,7 +16,7 @@ function Avater({ value, onChange }) {
         <label htmlFor="avater">
           <FontAwesomeIcon icon={faUpload} />
         </label>
-        <input type="file" id="avater" value={value} onChange={onChange} />
+        <input type="file" id="avater" onChange={onChange} />
       </div>
     </div>
   );
